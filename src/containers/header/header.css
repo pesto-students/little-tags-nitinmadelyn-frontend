@@ -1,0 +1,47 @@
+.black-bg {
+  background-color: black;
+  padding: 0 40px;
+}
+
+.menu {
+  padding: 5px 0px;
+  float: left;
+}
+
+ul {
+  list-style: none;
+  float: right;
+  margin: 10px 0px 0px 16px;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+li svg {
+  cursor: pointer;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  padding-top: 9px;
+  padding-left: 10px;
+}
+
+.icon:hover > svg {
+  color: #fff
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
+  margin: -32px -171px;
+  position: absolute;
+}

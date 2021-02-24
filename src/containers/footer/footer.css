@@ -1,0 +1,40 @@
+footer {
+  background-color: #000;
+  height: auto;
+  padding: 20px 40px;
+}
+
+.footer-links {
+  list-style: none;
+  color: #fff;
+  font-size: 150%;
+  display: grid;
+  float: left;
+}
+
+.footer-links li:first-child{
+  font-size: 130%;
+}
+
+.footer-links li{
+  padding-top: 10px;
+  font-size: 80%;
+}
+.footer-links li:last-child{
+  padding-right: 0;
+}
+
+.quick-links {
+  padding-left: 12%;
+}
+
+.quick-links img {
+  height: 30px;
+}
+
+.legal-text {
+  color: #fff;
+  clear: both;
+  max-width: 100%;
+  padding: 39px 34% 0% 34%;
+}
