@@ -46,3 +46,45 @@ input:focus {
 .align-center {
   text-align: center;
 }
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 250%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 200% !important;
+  }
+  .main-category {
+    width: 32.26% !important;
+    padding: 26px 0 !important;
+    font-size: 100% !important;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 150% !important;
+  }
+}
+
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+  
+}

@@ -38,7 +38,7 @@ const Header = (props) => {
   return (
     <header className="section black-bg">
         <div className="row">
-          <div className="col span-1-of-2">
+          <div className="col span-1-of-2 header-col">
             <MenuOutline
               color={'#fff'} 
               title={'Menu'}
@@ -48,7 +48,7 @@ const Header = (props) => {
             />
             <img src={Logo} className="logo" alt="logo" />
           </div>
-          <div className="col span-1-of-2">
+          <div className="col span-1-of-2 header-col">
             <ul className="nav">
               <li>
                 {(isSearchboxOpen)? searchBox : null}

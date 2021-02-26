@@ -13,7 +13,7 @@ footer {
 }
 
 .footer-links li:first-child{
-  font-size: 130%;
+  font-size: 110%;
 }
 
 .footer-links li{
@@ -36,5 +36,80 @@ footer {
   color: #fff;
   clear: both;
   max-width: 100%;
-  padding: 39px 34% 0% 34%;
+  margin: 0  auto;
+  text-align: center;
+  padding-top: 40px;
+}
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .footer-links li:first-child {
+    font-size: 83%;
+  }
+  .footer-links:last-of-type {
+    width: 39%;
+    text-align: center;
+  }
+  .footer-links li {
+    font-size: 60%;
+  }
+  .footer-links {
+    width: 29%;
+    padding: 0 5px 0 0;
+  }
+  ul.footer-links {
+    margin: 10px 0px 0px 0px;
+  }
+  .legal-text {
+    padding-top: 50px;
+    font-size: 80%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media only screen and (max-width: 480px) {
+  .legal-text {
+    font-size: 80%;
+  }
+  .footer-links {
+    width: 48%;
+  }
+  .footer-links:last-of-type
+  {
+    clear: both;
+    width: 100%;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media only screen and (max-width: 375px) {
+  
+}
+
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+
+  .footer-links {
+    width: 68%;
+  }
+  .footer-links li {
+      font-size: 53%;
+  }
+  .footer-links li:first-child {
+      font-size: 73%;
+  }
+  
 }

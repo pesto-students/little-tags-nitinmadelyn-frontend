@@ -3,7 +3,7 @@ import maincss from '../../assets/css/main.css';
 import footercss from './footer.css';
 import visamastercard from '../../assets/img/visa-mastercard.png';
 
-const footer = (props) => {
+const Footer = (props) => {
   return (
     <footer>
       <ul className="footer-links">
@@ -28,4 +28,4 @@ const footer = (props) => {
   );
 };
 
-export default footer;
+export default Footer;

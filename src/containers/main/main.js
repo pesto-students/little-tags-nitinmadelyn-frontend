@@ -3,7 +3,7 @@ import maincss from "./main.css";
 import newarrival from "../../assets/img/new-arrival.png";
 import mens from "../../assets/img/mens.png";
 
-const main = (props) => {
+const Main = (props) => {
   return (
     <main>
 
@@ -52,14 +52,14 @@ const main = (props) => {
               </span></div>
             <div className="hexagon hex-3"><span>
             <ul>
-                <li>HALF SLEEVE SHIRT</li>
-                <li>HALF SLEEVE T-SHIRT</li>
+                <li>HALF SLEEVE <br/>SHIRT</li>
+                <li>HALF SLEEVE <br/>T-SHIRT</li>
               </ul>
               </span></div>
             <div className="hexagon hex-4"><span>
             <ul>
-                <li>FULL SLEEVE SHIRT</li>
-                <li>FULL SLEEVE T-SHIRT</li>
+                <li>FULL SLEEVE <br/>SHIRT</li>
+                <li>FULL SLEEVE <br/>T-SHIRT</li>
               </ul></span></div>
             <div className="hexagon hex-5"><span>
               <ul>
@@ -101,4 +101,4 @@ const main = (props) => {
   );
 };
 
-export default main;
+export default Main;
