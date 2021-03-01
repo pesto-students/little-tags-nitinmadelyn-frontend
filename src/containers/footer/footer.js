@@ -1,30 +1,44 @@
-import React from 'react';
-import maincss from '../../assets/css/main.css';
-import footercss from './footer.css';
-import visamastercard from '../../assets/img/visa-mastercard.png';
+import React from "react";
+import maincss from "../../assets/css/main.css";
+import footercss from "./footer.css";
+import visamastercard from "../../assets/img/visa-mastercard.png";
+import flatten from 'flat';
+import { LanguageContext, languageObj } from "../../context/language-context";
+import { IntlProvider, FormattedMessage, FromattedHTMLMessage } from 'react-intl';
 
 const Footer = (props) => {
   return (
-    <footer>
-      <ul className="footer-links">
-        <li>INFORMATION</li>
-        <li>Who We Are</li>
-        <li>Terms & Conditions</li>
-        <li>Return & Refund Policy</li>
-        <li>Privacy Policy</li>
-      </ul>
-      <ul className="footer-links quick-links">
-        <li>QUICK LINKS</li>
-        <li>Track Order</li>
-        <li>Contact Us</li>
-        <li>Shipping & Delivery</li>
-      </ul>
-      <ul className="footer-links quick-links">
-        <li>PAYMENT MODE ACCEPTED</li>
-        <li className="align-center"><img src={visamastercard} /></li>
-      </ul>
-      <p className="legal-text">© 2021, KLOTHS PVT LTD. ALL RIGHTS RESERVED.</p>
-    </footer>
+    <LanguageContext.Consumer>
+      {(language) => (
+        <IntlProvider
+          locale={language}
+          messages={flatten(languageObj[language.language])}
+        >
+          <footer>
+            <ul className="footer-links">
+              <li><FormattedMessage id="footer.links1.title" /></li>
+              <li><FormattedMessage id="footer.links1.link1" /></li>
+              <li><FormattedMessage id="footer.links1.link2" /></li>
+              <li><FormattedMessage id="footer.links1.link3" /></li>
+            </ul>
+            <ul className="footer-links quick-links">
+              <li><FormattedMessage id="footer.links2.title" /></li>
+              <li><FormattedMessage id="footer.links2.link1" /></li>
+              <li><FormattedMessage id="footer.links2.link2" /></li>
+            </ul>
+            <ul className="footer-links quick-links">
+              <li><FormattedMessage id="footer.links3.title" /></li>
+              <li className="align-center">
+                <img src={visamastercard} />
+              </li>
+            </ul>
+            <p className="legal-text">
+            <FormattedMessage id="footer.legal" />
+            </p>
+          </footer>
+        </IntlProvider>
+      )}
+    </LanguageContext.Consumer>
   );
 };
 

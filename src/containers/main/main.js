@@ -12,6 +12,8 @@ import men from "../../assets/img/men.png";
 import kids from "../../assets/img/kids.jpg";
 import women from "../../assets/img/women.webp";
 
+import flatten from 'flat';
+
 const Main = (props) => {
   const [currentSection, setSection] = useState("Men");
   let component;
@@ -42,18 +44,18 @@ const Main = (props) => {
   return (
     <LanguageContext.Consumer>
       {({language}) => (
-        <IntlProvider locale={language} messages={languageObj[language].home}>
+        <IntlProvider locale={language} messages={flatten(languageObj[language])}>
         <main>
           <section className="section new-arrival">
             <div className="row">
               <div className="banner-text-box">
                 <h1>
-                  <FormattedMessage id='bannerText' >
+                  <FormattedMessage id="home.bannerText" >
                     {(text) => ReactHtmlParser(text)}
                   </FormattedMessage>
                 </h1>
                 <button className="button-red">
-                  <FormattedMessage id='bannerButton' />
+                  <FormattedMessage id="home.bannerButton" />
                 </button>
               </div>
             </div>
@@ -65,17 +67,17 @@ const Main = (props) => {
 
               <Tab
               onClick={handleClick("Men")}
-              label="Men"
+              label={<FormattedMessage id='home.mens' />}
               isActive={currentSection === "Men"}
             />
             <Tab
               onClick={handleClick("Women")}
-              label="Women"
+              label={<FormattedMessage id='home.women' />}
               isActive={currentSection === "Women"}
             />
             <Tab
               onClick={handleClick("Kids")}
-              label="Kids"
+              label={<FormattedMessage id='home.kids' />}
               isActive={currentSection === "Kids"}
             />
 
