@@ -25,7 +25,7 @@ const Login = (props) => {
           <main>
             <section className="login-container">
               <div className="login-box">
-                <h1><FormattedMessage id="login.title" /></h1>
+                <h1 className="left-align"><FormattedMessage id="login.title" /></h1>
                 <hr />
                 <div className="mobile">
                 <FormattedMessage id="login.placeholder.mobile">
@@ -50,7 +50,7 @@ const Login = (props) => {
                   </div>
                 </div>
                 <div className="row">
-                  <h3><FormattedMessage id="login.or" /></h3>
+                  <h3 className="margin-top-40"><FormattedMessage id="login.or" /></h3>
                 </div>
                 <div className="row">
                   <div className="col span-1-of-2">

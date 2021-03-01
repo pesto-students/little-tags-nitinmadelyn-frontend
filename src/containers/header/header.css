@@ -123,6 +123,7 @@ input {
     right: 5px;
     padding: 0;
     font-size: 70%;
+    z-index: 1;
   }
 }
 

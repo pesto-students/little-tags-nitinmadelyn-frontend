@@ -25,7 +25,7 @@ const Signup = (props) => {
           <main>
             <section className="login-container">
               <div className="login-box">
-                <h1><FormattedMessage id="signup.title" /></h1>
+                <h1 className="left-align"><FormattedMessage id="signup.title" /></h1>
                 <hr />
                 <FormattedMessage id="signup.placeholder.firstName">
                   {(msg) => (<input type="text" name="firstName" placeholder={msg} />)}
@@ -60,7 +60,7 @@ const Signup = (props) => {
                   </div>
                 </div>
                 <div className="row">
-                  <h3><FormattedMessage id="signup.or" /></h3>
+                  <h3 className="margin-top-40"><FormattedMessage id="signup.or" /></h3>
                 </div>
                 <div className="row">
                   <div className="col span-1-of-2">
