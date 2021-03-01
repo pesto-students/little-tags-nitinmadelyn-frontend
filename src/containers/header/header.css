@@ -1,0 +1,157 @@
+.black-bg {
+  background-color: black;
+  padding: 0 40px;
+}
+
+.menu {
+  padding: 5px 0px;
+  float: left;
+}
+
+ul {
+  list-style: none;
+  float: right;
+  margin: 10px 0px 0px 16px;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+li svg {
+  cursor: pointer;
+}
+
+li:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  padding-top: 9px;
+  padding-left: 10px;
+}
+
+.icon:hover > svg {
+  color: #fff
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  background-color: #000;
+  color: #fff;
+  margin: -32px -171px;
+  position: absolute;
+}
+
+.language-dropdown {
+  background-color: #000;
+  color: #444;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  top: 60px;
+  right: 25px;
+  display: grid;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.language-dropdown span {
+  padding: 10px;
+  cursor: pointer;
+}
+.language-dropdown span:first-child {
+  border-bottom: 1px solid #fff;
+}
+
+.selected {
+  color: #fff;
+}
+
+
+/* Desktops, large screens */
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
+}
+/* iPads, Tablets */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 250%;
+  }
+  svg {
+    color: #fff !important;
+  }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  .logo {
+    width: 117px;
+    padding-top: 5px;
+  }
+  .header-col svg {
+    height: 15px !important;
+    width: 15px !important;
+  }
+  .black-bg {
+    padding: 0 10px;
+  }
+  .header-col {
+    width: 49.2%;
+  }
+  .logo {
+    width: 153px;
+    padding-top: 7px;
+  }
+  .header-col svg {
+    height: 25px !important;
+    width: 25px !important;
+  }
+  .nav {
+    margin: 7px 0px 0px 16px;
+  }
+  .language-dropdown{
+    top: 40px;
+    right: 5px;
+    padding: 0;
+    font-size: 70%;
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .logo {
+    width: 143px;
+    padding-top: 5px;
+  }
+  .header-col svg {
+    height: 20px !important;
+    width: 20px !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .menu {
+    padding: 10px 0px;
+    float: left;
+  }
+  .logo {
+    width: 116px;
+    padding-top: 10px;
+  }
+  .header-col svg {
+    height: 16px !important;
+    width: 16px !important;
+  }
+  .nav {
+    margin: 11px 0px 0px 13px
+  }
+}

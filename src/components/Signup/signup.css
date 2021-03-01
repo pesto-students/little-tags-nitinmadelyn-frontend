@@ -1,0 +1,118 @@
+.login-container {
+  background-color: #222121;
+  color: #fff;
+}
+
+.login-box {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 30px 40px;
+  position: relative;
+  text-align: center;
+}
+
+.login-box input {
+  color: #fff;
+  height: 40px;
+  width: 97%;
+  font-size: 100%;
+  border-radius: 5px;
+  background-color: #222121;
+  display: flex;
+  position: relative;
+  margin: 30px 0;
+}
+
+.mobile {
+  position: relative;
+}
+.mobile span {
+  position: absolute;
+  color: #c30;
+  z-index: 1;
+  float: right;
+  top: 23px;
+  right: 10px;
+  font-size: 80%;
+}
+
+.login-btn{
+  float: left;
+  padding: 10px 20px;
+}
+
+.signup-link {
+  float: right;
+  text-align: right;
+  text-decoration: none;
+  color: #fff;
+}
+
+.signup-link:hover {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #c30;
+}
+
+.facebook-btn {
+  float: left;
+  width: auto !important;
+}
+
+.google-btn {
+  float: right;
+  width: auto !important;
+}
+
+/* Desktops, large screens */
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
+}
+/* iPads, Tablets */
+@media only screen and (max-width: 768px) {
+  
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  .google-btn {
+    float: none !important;
+    margin: 5px auto !important;
+    width: 100% !important;
+  }
+  .facebook-btn {
+    float: none !important;
+    margin: 5px auto !important;
+    width: 100% !important;
+  }
+  .login-btn{
+    margin: 5px auto !important;
+    width: 100%;
+  }
+  .login-box input{
+    padding: 4px;
+  }
+  .mobile span{
+    top: 18px !important;
+  }
+  .signup-link{
+    float: none !important;
+    top: 10px;
+    position: relative;
+  }
+  .margin-top-40{
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  
+}
+
+@media only screen and (max-width: 320px) {
+  
+}

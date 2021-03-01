@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +8,79 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  color: #fff;
+  font-size: 200%;
+  word-spacing: 4px;
+  letter-spacing: 1px;
+}
+
+.button-red {
+  background-color: #c30;
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 100%;
+}
+
+.button-red:hover {
+  background-color: rgb(206, 63, 15);
+  cursor: pointer;
+}
+
+.button-red:focus {
+  outline:0;
+}
+
+input:focus {
+  outline:0;
+}
+
+.align-center {
+  text-align: center;
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (max-width: 1200px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  h1 {
+    font-size: 250%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 480px and up) */
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 200% !important;
+  }
+  .main-category {
+    width: 32.26% !important;
+    padding: 26px 0 !important;
+    font-size: 100% !important;
+  }
+}
+
+/* Extra small devices (phones, 375px and down) */
+@media only screen and (max-width: 375px) {
+  h1 {
+    font-size: 150% !important;
+  }
+}
+
+/* Extra small devices (phones, 320px and down) */
+@media only screen and (max-width: 320px) {
+  
 }
