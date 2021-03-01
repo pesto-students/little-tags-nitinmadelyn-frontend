@@ -44,17 +44,16 @@ footer {
 
 
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* Desktops, large screens */
 @media only screen and (max-width: 1200px) {
-
+  
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (max-width: 992px) {
-
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
 }
-
-/* Medium devices (landscape tablets, 768px and up) */
+/* iPads, Tablets */
 @media only screen and (max-width: 768px) {
   .footer-links li:first-child {
     font-size: 83%;
@@ -79,7 +78,7 @@ footer {
   }
 }
 
-/* Small devices (portrait tablets and large phones, 480px and up) */
+/* Mobile devices */
 @media only screen and (max-width: 480px) {
   .legal-text {
     font-size: 80%;
@@ -91,17 +90,15 @@ footer {
   {
     clear: both;
     width: 100%;
+    margin-top: 50px;
   }
 }
 
-/* Extra small devices (phones, 375px and down) */
 @media only screen and (max-width: 375px) {
   
 }
 
-/* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
-
   .footer-links {
     width: 68%;
   }
@@ -111,5 +108,7 @@ footer {
   .footer-links li:first-child {
       font-size: 73%;
   }
-  
+  .legal-text {
+    font-size: 60%;
+}
 }
