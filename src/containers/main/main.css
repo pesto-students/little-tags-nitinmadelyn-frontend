@@ -202,6 +202,10 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
+  .mens-category{
+    height: 1060px;
+  }
+  
   .hexagon {
     width: 225px; 
     height: 129.90px;
@@ -291,6 +295,10 @@
 
 /* Small devices (portrait tablets and large phones, 480px and up) */
 @media only screen and (max-width: 480px) {
+  .mens-category{
+    height: 580px;
+  }
+
   .hexagon {
     width: 121px; 
     height: 69.86px;
@@ -382,6 +390,10 @@
 
 /* Extra small devices (phones, 375px and down) */
 @media only screen and (max-width: 375px) {
+  .mens-category{
+    height: 510px;
+  }
+
   .hexagon {
     width: 110px; 
     height: 63.51px;
@@ -473,6 +485,10 @@
 
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
+  .mens-category{
+    height: 440px;
+  }
+
   .hexagon {
     width: 93px; 
     height: 53.69px;
