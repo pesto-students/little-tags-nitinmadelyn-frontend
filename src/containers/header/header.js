@@ -75,7 +75,7 @@ const Header = (props) => {
             width="36px"
             className="menu"
           />
-          <img src={Logo} className="logo" alt="logo" />
+          <Link to="/"><img src={Logo} className="logo" alt="logo" /></Link>
         </div>
         <div className="col span-1-of-2 header-col">
           <ul className="nav">
