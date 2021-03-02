@@ -1,5 +1,4 @@
 .new-arrival {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(../../assets/img/new-arrival.png);
   background-size: cover;
   background-position: center;
   height: 60vh;
@@ -10,6 +9,66 @@
   position: absolute;
   top: 20%;
   left: 40px;
+}
+
+.slider {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  background: black;
+}
+.slide {
+  min-width: 100%;
+  height: 60vh;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#goLeft {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 60vh;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  font-weight: bold;
+}
+#goLeft:hover {
+  transition: 0.5s;
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.356);
+}
+#goRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10%;
+  height: 60vh;
+  background: none;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  font-weight: bold;
+}
+#goRight:hover {
+  transition: 0.5s;
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.356);
+}
+.myButton {
+  align-items: center;
 }
 
 .main-bg {
@@ -42,13 +101,12 @@
 }
 
 .category {
-  
 }
 
 .category-bg {
   background-color: #222121;
   width: 100%;
-  height: auto;  
+  height: auto;
   padding-bottom: 50px;
 }
 
@@ -116,10 +174,10 @@
 .hexagon span {
   display: block;
   position: absolute;
-  top:2.8867513459481287px;
+  top: 2.8867513459481287px;
   left: 0;
-  width:376px;
-  height:211.3102px;
+  width: 376px;
+  height: 211.3102px;
   z-index: 2;
   background: inherit;
 
@@ -188,59 +246,55 @@
   margin: 1451.54px 0;
 }
 
-
-
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (max-width: 1200px) {
-
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-  .mens-category{
+  .mens-category {
     height: 1060px;
   }
-  
+
   .hexagon {
-    width: 225px; 
-    height: 129.90px;
+    width: 225px;
+    height: 129.9px;
     margin: 64.95px 0;
     border-left: solid 5px #cc3300;
     border-right: solid 5px #cc3300;
   }
-  
+
   .hexagon:before,
   .hexagon:after {
     width: 161.1px;
-    height: 159.10px;
+    height: 159.1px;
     -webkit-transform: scaleY(0.5774) rotate(-45deg);
     -ms-transform: scaleY(0.5774) rotate(-45deg);
     transform: scaleY(0.5774) rotate(-45deg);
     left: 27.9505px;
   }
-  
+
   .hexagon:before {
     top: -83.5495px;
     border-top: solid 7.0711px #cc3300;
     border-right: solid 7.0711px #cc3300;
   }
-  
+
   .hexagon:after {
     bottom: -83.5495px;
     border-bottom: solid 7.0711px #cc3300;
     border-left: solid 7.0711px #cc3300;
   }
-  
+
   /*cover up extra shadows*/
   .hexagon span {
-    top:2.8867513459481287px;
+    top: 2.8867513459481287px;
     width: 225px;
-    height:124.1303px;
+    height: 124.1303px;
     font-size: 100%;
   }
 
@@ -248,37 +302,37 @@
     left: 19.5%;
     margin: 267.54px 0;
   }
-  
+
   .hex-3 {
     left: 50.5%;
     margin: 267.54px 0;
   }
-  
+
   .hex-4 {
     left: 4%;
     margin: 470.54px 0;
   }
-  
+
   .hex-5 {
     left: 35%;
     margin: 470.54px 0;
   }
-  
+
   .hex-6 {
     left: 66%;
     margin: 470.54px 0;
   }
-  
+
   .hex-7 {
     left: 19.3%;
     margin: 674.54px 0;
   }
-  
+
   .hex-8 {
     left: 50.5%;
     margin: 674.54px 0;
   }
-  
+
   .hex-9 {
     left: 34.8%;
     margin: 877.54px 0;
@@ -295,18 +349,18 @@
 
 /* Small devices (portrait tablets and large phones, 480px and up) */
 @media only screen and (max-width: 480px) {
-  .mens-category{
+  .mens-category {
     height: 580px;
   }
 
   .hexagon {
-    width: 121px; 
+    width: 121px;
     height: 69.86px;
     margin: 34.93px 0;
     border-left: solid 2px #cc3300;
     border-right: solid 2px #cc3300;
   }
-  
+
   .hexagon:before,
   .hexagon:after {
     width: 85.56px;
@@ -316,25 +370,25 @@
     transform: scaleY(0.5774) rotate(-45deg);
     left: 16.02px;
   }
-  
+
   .hexagon:before {
     top: -44.78px;
     border-top: solid 3.0711px #cc3300;
     border-right: solid 3.0711px #cc3300;
   }
-  
+
   .hexagon:after {
     bottom: -44.78px;
     border-bottom: solid 3.0711px #cc3300;
     border-left: solid 3.0711px #cc3300;
   }
-  
+
   /*cover up extra shadows*/
   .hexagon span {
-    top:2.8867513459481287px;
+    top: 2.8867513459481287px;
     left: 0;
-    width:121px;
-    height:64.0859px;
+    width: 121px;
+    height: 64.0859px;
     font-size: 70%;
   }
 
@@ -342,37 +396,37 @@
     left: 20.1%;
     margin: 143.54px 0;
   }
-  
+
   .hex-3 {
     left: 50.1%;
     margin: 143.54px 0;
   }
-  
+
   .hex-4 {
     left: 5.1%;
     margin: 253.54px 0;
   }
-  
+
   .hex-5 {
     left: 35.2%;
     margin: 253.54px 0;
   }
-  
+
   .hex-6 {
     left: 65.2%;
     margin: 253.54px 0;
   }
-  
+
   .hex-7 {
     left: 20.3%;
     margin: 363.54px 0;
   }
-  
+
   .hex-8 {
     left: 50.3%;
     margin: 363.54px 0;
   }
-  
+
   .hex-9 {
     left: 35.2%;
     margin: 473.54px 0;
@@ -390,18 +444,18 @@
 
 /* Extra small devices (phones, 375px and down) */
 @media only screen and (max-width: 375px) {
-  .mens-category{
+  .mens-category {
     height: 510px;
   }
 
   .hexagon {
-    width: 110px; 
+    width: 110px;
     height: 63.51px;
     margin: 31.75px 0;
     border-left: solid 2px #cc3300;
     border-right: solid 2px #cc3300;
   }
-  
+
   .hexagon:before,
   .hexagon:after {
     width: 78.78px;
@@ -411,25 +465,25 @@
     transform: scaleY(0.5774) rotate(-45deg);
     left: 14.1091px;
   }
-  
+
   .hexagon:before {
     top: -39.8909px;
     border-top: solid 3.0711px #cc3300;
     border-right: solid 3.0711px #cc3300;
   }
-  
+
   .hexagon:after {
     bottom: -39.8909px;
     border-bottom: solid 3.0711px #cc3300;
     border-left: solid 3.0711px #cc3300;
   }
-  
+
   /*cover up extra shadows*/
   .hexagon span {
-    top:2.8867513459481287px;
+    top: 2.8867513459481287px;
     left: 0;
-    width:110px;
-    height:57.7350px;
+    width: 110px;
+    height: 57.735px;
     font-size: 70%;
   }
 
@@ -437,37 +491,37 @@
     left: 19.1%;
     margin: 130.54px 0;
   }
-  
+
   .hex-3 {
     left: 50.1%;
     margin: 130.54px 0;
   }
-  
+
   .hex-4 {
     left: 3.6%;
     margin: 228.9px 0;
   }
-  
+
   .hex-5 {
     left: 34.4%;
     margin: 228.9px 0;
   }
-  
+
   .hex-6 {
     left: 65.4%;
     margin: 227.9px 0;
   }
-  
+
   .hex-7 {
     left: 18.6%;
     margin: 327.54px 0;
   }
-  
+
   .hex-8 {
     left: 49.8%;
     margin: 326.54px 0;
   }
-  
+
   .hex-9 {
     left: 34.2%;
     margin: 424.54px 0;
@@ -485,18 +539,18 @@
 
 /* Extra small devices (phones, 320px and down) */
 @media only screen and (max-width: 320px) {
-  .mens-category{
+  .mens-category {
     height: 440px;
   }
 
   .hexagon {
-    width: 93px; 
+    width: 93px;
     height: 53.69px;
     margin: 26.85px 0;
     border-left: solid 3.0711px #cc3300;
     border-right: solid 3.0711px #cc3300;
   }
-  
+
   .hexagon:before,
   .hexagon:after {
     width: 66.76px;
@@ -506,25 +560,25 @@
     transform: scaleY(0.5774) rotate(-45deg);
     left: 10.6195px;
   }
-  
+
   .hexagon:before {
     top: -34.8805px;
     border-top: solid 3.0711px #cc3300;
     border-right: solid 3.0711px #cc3300;
   }
-  
+
   .hexagon:after {
     bottom: -34.8805px;
     border-bottom: solid 3.0711px #cc3300;
     border-left: solid 3.0711px #cc3300;
   }
-  
+
   /*cover up extra shadows*/
   .hexagon span {
-    top:2.8867513459481287px;
+    top: 2.8867513459481287px;
     left: 0;
     width: 93px;
-    height:47.9201px;
+    height: 47.9201px;
     font-size: 50%;
   }
 
@@ -532,37 +586,37 @@
     left: 19.2%;
     margin: 110.54px 0;
   }
-  
+
   .hex-3 {
     left: 50.9%;
     margin: 110.54px 0;
   }
-  
+
   .hex-4 {
     left: 3.6%;
     margin: 195.9px 0;
   }
-  
+
   .hex-5 {
     left: 35.4%;
     margin: 195.9px 0;
   }
-  
+
   .hex-6 {
     left: 67%;
     margin: 195.9px 0;
   }
-  
+
   .hex-7 {
     left: 19.6%;
     margin: 280.54px 0;
   }
-  
+
   .hex-8 {
     left: 51.3%;
     margin: 280.54px 0;
   }
-  
+
   .hex-9 {
     left: 35.5%;
     margin: 365.54px 0;
