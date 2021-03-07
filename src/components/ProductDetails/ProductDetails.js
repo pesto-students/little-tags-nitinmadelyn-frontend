@@ -28,9 +28,9 @@ const ProductDetails = (props) => {
         "https://www.upsieutoc.com/images/2020/06/27/img3.jpg",
         "https://www.upsieutoc.com/images/2020/06/27/img4.jpg",
       ],
-      description: "UI/UX designing, html css tutorials",
+      description: "Nike React Infinity Run Flyknit A.I.R. Chaz Bear",
       content:
-        "Welcome to our channel Dev AT. Here you can learn web designing, UI/UX designing, html css tutorials, css animations and css effects, javascript and jquery tutorials and related so on.",
+        "The Nike React Infinity Run Flyknit is designed to help reduce injury and keep you on the run. More foam and improved upper details provide a secure and cushioned feel. Lace up and feel the potential as you hit the road. Graphics are designed by musician Chaz Bear.",
       price: 2300,
       colors: ["red", "black", "crimson", "teal"],
       count: 1,
