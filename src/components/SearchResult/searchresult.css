@@ -1,0 +1,192 @@
+.main-container {
+  background-color: #222121;
+  color: #fff;
+  padding: 0 40px;
+}
+
+.filter-bg {
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.filter-bg hr{
+  width: 90%;
+}
+.filter-bg h4{
+  margin: 10px 0;
+}
+
+
+
+.filter-bg input{
+  position: relative;
+}
+
+.price-filter {
+  width: 15%;
+  margin: 0 10px;
+}
+
+.result-title {
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: left;
+}
+
+.result-title h3 {
+  padding-left: 50px;
+}
+
+.item-container {
+  display: inline-block;
+  margin: 30px 75px;
+}
+
+.item {
+  display: inline-block;
+  float: left;
+  border-radius: 5px;
+}
+
+.item h2 {
+  display: block;
+  font-weight: normal;
+  float: left;
+  clear: both;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.item-image {
+  display: block;
+  float: left;
+  padding: 10px;
+}
+
+.item-price {
+  display: block;
+  float: left;
+  padding: 10px;
+  font-size: 130%;
+  clear: both;
+}
+
+.item-add-to-cart {
+  display: block;
+  clear: both;
+  padding: 10px;
+  width: 92%;
+  margin: 2% 4%;
+  text-transform: uppercase;
+  border: none !important;
+}
+
+select {
+  padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+}
+
+.color-box {
+  width: 100%;
+  padding: 0 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brand-box {
+  width: 100%;
+  display: grid;
+  float: left;
+}
+
+.brand-box label {
+  display: block;
+  float: left;
+  padding: 3px 50px;
+  text-align: left;
+}
+
+.brand-box input {
+  margin: 0 10px;
+  display: block;
+  float: left;
+}
+
+.small-square {
+  height: 15px;
+  width: 15px;
+  display: block;
+  float: left;
+  border: 1px solid #fff;
+  margin: 5px;
+}
+
+.red { background-color: red;}
+.white { background-color: #fff;}
+.black { background-color: #000;}
+.green { background-color: green;}
+.yellow { background-color: yellow;}
+.blue { background-color: blue;}
+.orange { background-color: orange;}
+
+/* Desktops, large screens */
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
+}
+/* iPads, Tablets */
+@media only screen and (max-width: 768px) {
+  
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  .google-btn {
+    float: none !important;
+    margin: 5px auto !important;
+    width: 100% !important;
+  }
+  .facebook-btn {
+    float: none !important;
+    margin: 5px auto !important;
+    width: 100% !important;
+  }
+  .login-btn{
+    margin: 5px auto !important;
+    width: 100%;
+  }
+  .login-box input{
+    padding: 4px;
+  }
+  .mobile span{
+    top: 18px !important;
+  }
+  .signup-link{
+    float: none !important;
+    top: 10px;
+    position: relative;
+  }
+  .margin-top-40{
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  
+}
+
+@media only screen and (max-width: 320px) {
+  
+}
