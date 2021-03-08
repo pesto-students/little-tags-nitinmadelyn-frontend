@@ -5,17 +5,18 @@ import Main from "../containers/main/main";
 import Footer from "../containers/footer/footer";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
-import ProductDetails from "../components/ProductDetails/ProductDetails";
+import SearchResult from "../components/SearchResult/SearchResult";
 import { LanguageContext } from "../context/language-context";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch, useParams } from "react-router-dom";
 import Home from "../components/Home";
+import ProductDetails from "../components/ProductDetails/ProductDetails";
 
-function App() {
-  const [language, setLanguage] = React.useState("EN");
+const App = (props) => {
+  const [language, setLanguage] = React.useState("en");
   const handleChangeLanguage = (element) => {
-    setLanguage(element.target.innerHTML);
+    setLanguage(element.target.innerHTML.toLowerCase());
     element.target.classList.add("selected");
-    if (element.target.innerHTML === "EN") {
+    if (element.target.innerHTML === "en") {
       element.target.nextSibling.classList.remove("selected");
     } else {
       element.target.previousSibling.classList.remove("selected");
@@ -40,6 +41,11 @@ function App() {
           <Signup />
           <Footer />
         </Route>
+        <Route path="/search/:text" component={(Header, SearchResult)}>
+          <Header handleChangeLanguage={handleChangeLanguage} />
+          <SearchResult language={language} />
+          <Footer />
+        </Route>
         <Route path="/product-details/:proId">
           <Header handleChangeLanguage={handleChangeLanguage} />
           <ProductDetails />
@@ -48,6 +54,6 @@ function App() {
       </Switch>
     </LanguageContext.Provider>
   );
-}
+};
 
 export default App;

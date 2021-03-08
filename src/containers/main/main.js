@@ -3,16 +3,21 @@ import maincss from "./main.css";
 import newarrival from "../../assets/img/new-arrival.png";
 import mens from "../../assets/img/mens.png";
 import { LanguageContext, languageObj } from "../../context/language-context";
-import ReactHtmlParser from 'react-html-parser';
-import { IntlProvider, FormattedMessage, FromattedHTMLMessage } from 'react-intl';
+import ReactHtmlParser from "react-html-parser";
+import {
+  IntlProvider,
+  FormattedMessage,
+  FromattedHTMLMessage,
+} from "react-intl";
 import Section from "./Section";
 import Tab from "./Tab";
+import Slider from "./Slider";
 
 import men from "../../assets/img/men.png";
 import kids from "../../assets/img/kids.jpg";
 import women from "../../assets/img/women.webp";
 
-import flatten from 'flat';
+import flatten from "flat";
 
 const Main = (props) => {
   const [currentSection, setSection] = useState("Men");
@@ -32,7 +37,6 @@ const Main = (props) => {
       default:
         component = <Section category="Men" imgSrc={men} />;
     }
-    console.log("component", component);
     return component;
   };
 
@@ -43,46 +47,34 @@ const Main = (props) => {
 
   return (
     <LanguageContext.Consumer>
-      {({language}) => (
-        <IntlProvider locale={language} messages={flatten(languageObj[language])}>
-        <main>
-          <section className="section new-arrival">
-            <div className="row">
-              <div className="banner-text-box">
-                <h1>
-                  <FormattedMessage id="home.bannerText" >
-                    {(text) => ReactHtmlParser(text)}
-                  </FormattedMessage>
-                </h1>
-                <button className="button-red">
-                  <FormattedMessage id="home.bannerButton" />
-                </button>
-              </div>
-            </div>
-          </section>
+      {({ language }) => (
+        <IntlProvider
+          locale={language}
+          messages={flatten(languageObj[language])}
+        >
+          <main>
+            <Slider />
 
-          <section className="section">
-            <div className="row">
-              <div className="main-bg">
+            <section className="section">
+              <div className="row">
+                <div className="main-bg">
+                  <Tab
+                    onClick={handleClick("Men")}
+                    label={<FormattedMessage id="home.mens" />}
+                    isActive={currentSection === "Men"}
+                  />
+                  <Tab
+                    onClick={handleClick("Women")}
+                    label={<FormattedMessage id="home.women" />}
+                    isActive={currentSection === "Women"}
+                  />
+                  <Tab
+                    onClick={handleClick("Kids")}
+                    label={<FormattedMessage id="home.kids" />}
+                    isActive={currentSection === "Kids"}
+                  />
 
-              <Tab
-              onClick={handleClick("Men")}
-              label={<FormattedMessage id='home.mens' />}
-              isActive={currentSection === "Men"}
-            />
-            <Tab
-              onClick={handleClick("Women")}
-              label={<FormattedMessage id='home.women' />}
-              isActive={currentSection === "Women"}
-            />
-            <Tab
-              onClick={handleClick("Kids")}
-              label={<FormattedMessage id='home.kids' />}
-              isActive={currentSection === "Kids"}
-            />
-
-
-                {/*<div className="col span-1-of-3 main-category">
+                  {/*<div className="col span-1-of-3 main-category">
                   <a href="#" className="active">
                   <FormattedMessage id='mens' />
                   </a>
@@ -93,12 +85,11 @@ const Main = (props) => {
                 <div className="col span-1-of-3 main-category">
                   <a href="#"><FormattedMessage id='kids' /></a>
                 </div>*/}
+                </div>
               </div>
-            </div>
-          </section>
-          {getSection()}
-
-        </main>
+            </section>
+            {getSection()}
+          </main>
         </IntlProvider>
       )}
     </LanguageContext.Consumer>
@@ -107,8 +98,8 @@ const Main = (props) => {
 
 export default Main;
 
-
-{/*<main>
+{
+  /*<main>
       <section className="section new-arrival">
         <div className="row">
           <div className="banner-text-box">
@@ -143,4 +134,5 @@ export default Main;
       </section>
 
       {getSection()}
-    </main>*/}
+    </main>*/
+}

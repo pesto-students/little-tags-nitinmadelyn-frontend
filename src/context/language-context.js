@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const languageObj = {
-  EN: {
+  en: {
     footer: {
       legal: '© 2021, KLOTHS PVT LTD. ALL RIGHTS RESERVED.',
       links1: {
@@ -56,9 +56,20 @@ export const languageObj = {
         google: 'Signup With Google',
         facebook: 'Signup With Facebook'
       }
+    },
+    category: {
+      filters: "Filters",
+      allFilters: {
+        brand: "Brand",
+        price: "Price",
+        size: "Size",
+        color: "Color"
+      },
+      result: "Results for `{name}`",
+      addtocart: "Add to cart"
     }
   },
-  ES: {
+  es: {
     footer: {
       legal: '© 2021, KLOTHS PVT LTD. RESERVADOS TODOS LOS DERECHOS.',
       links1: {
@@ -113,6 +124,17 @@ export const languageObj = {
         google: 'Registrarse con Google',
         facebook: 'Registrarse con Facebook'
       }
+    },
+    category: {
+      filters: "Filtros",
+      allFilters: {
+        brand: "Marca",
+        price: "Precio",
+        size: "Tamaño",
+        color: "Color"
+      },
+      result: "resultados para `{name}`",
+      addtocart: "Añadir a la cesta"
     }
   },
 };
