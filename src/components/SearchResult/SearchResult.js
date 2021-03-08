@@ -22,7 +22,7 @@ const SearchResult = (props) => {
       var request = require('request');
       var options = {
         'method': 'POST',
-        'url': 'http://localhost:3001/product/search',
+        'url': 'https://little-tags-app.herokuapp.com/product/search',
         'headers': { 'Content-Type': 'application/json' },
         body: JSON.stringify({"language": props.language})
       };
