@@ -129,7 +129,7 @@ const SearchResult = (props) => {
                     <div className="item-container">
                     { products.map((product) => 
                             <div className="row item">
-                            <img src={hoodieimg} className="item-image" />
+                            <Link to="/product-details/1"><img src={hoodieimg} className="item-image" /></Link>
                             <h2>{product.name}</h2>
                             <div className="item-price">{product.currency}{product.price}</div>
                             <button className="button-red item-add-to-cart"><FormattedMessage id="category.addtocart" /></button>
