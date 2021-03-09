@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductDetailsCss from "./ProductDetails.css";
 import { Link } from "react-router-dom";
-import maincss from "../../assets/css/main.css";
+import "../../assets/css/main.css";
 import {
   FacebookLoginButton,
   GoogleLoginButton,
@@ -13,11 +13,13 @@ import {
   FromattedHTMLMessage,
 } from "react-intl";
 import flatten from "flat";
+import { connect } from "react-redux";
+import { addToCart } from "../../containers/redux/actions/cart";
 
 import Colors from "./Colors";
 import DetailsThumb from "./DetailsThumb";
 
-const ProductDetails = (props) => {
+const ProductDetails = ({ cart, addToCart }) => {
   const [product, setProduct] = useState([
     {
       _id: "1",
@@ -36,6 +38,8 @@ const ProductDetails = (props) => {
       count: 1,
     },
   ]);
+
+  console.log({ cart });
 
   const [index, setIndex] = useState(0);
 
@@ -79,12 +83,43 @@ const ProductDetails = (props) => {
                       <h2>{item.title}</h2>
                       <span>₹ {item.price}</span>
                     </div>
-                    <Colors colors={item.colors} />
+                    <div className="row">
+                      <select style={{ width: "10vw" }}>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                        <option>XXL</option>
+                      </select>
+
+                      <input
+                        type="number"
+                        name="minPrice"
+                        placeholder="Quantity"
+                        min="1"
+                        max="30"
+                        className="price-filter"
+                      />
+                    </div>
+
+                    {/* <Colors colors={item.colors} /> */}
 
                     <p>{item.description}</p>
                     <p>{item.content}</p>
 
-                    <button className="cart">Add to cart</button>
+                    <button
+                      className="button-red"
+                      onClick={() => addToCart(item)}
+                    >
+                      Add to cart
+                    </button>
+                    <button
+                      className="button-red"
+                      style={{ marginLeft: "2vw" }}
+                    >
+                      Add to wishlist
+                    </button>
                   </div>
                 </div>
               ))}
@@ -96,4 +131,16 @@ const ProductDetails = (props) => {
   );
 };
 
-export default ProductDetails;
+const mapStateToProps = (state) => {
+  const { cart } = state;
+
+  return {
+    cart,
+  };
+};
+
+const mapDispatchToProps = {
+  addToCart,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);

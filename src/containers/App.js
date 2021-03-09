@@ -11,6 +11,9 @@ import { Route, Switch, useParams } from "react-router-dom";
 import Home from "../components/Home";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
 const App = (props) => {
   const [language, setLanguage] = React.useState("en");
   const handleChangeLanguage = (element) => {
@@ -24,35 +27,37 @@ const App = (props) => {
   };
 
   return (
-    <LanguageContext.Provider value={{ language: language }}>
-      <Switch>
-        <Route path="/" exact>
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Main />
-          <Footer />
-        </Route>
-        <Route path="/login">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Login />
-          <Footer />
-        </Route>
-        <Route path="/signup">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Signup />
-          <Footer />
-        </Route>
-        <Route path="/search/:text" component={(Header, SearchResult)}>
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <SearchResult language={language} />
-          <Footer />
-        </Route>
-        <Route path="/product-details/:proId">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <ProductDetails />
-          <Footer />
-        </Route>
-      </Switch>
-    </LanguageContext.Provider>
+    <Provider store={store}>
+      <LanguageContext.Provider value={{ language: language }}>
+        <Switch>
+          <Route path="/" exact>
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <Main />
+            <Footer />
+          </Route>
+          <Route path="/login">
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <Login />
+            <Footer />
+          </Route>
+          <Route path="/signup">
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <Signup />
+            <Footer />
+          </Route>
+          <Route path="/search/:text" component={(Header, SearchResult)}>
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <SearchResult language={language} />
+            <Footer />
+          </Route>
+          <Route path="/product-details/:proId">
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <ProductDetails />
+            <Footer />
+          </Route>
+        </Switch>
+      </LanguageContext.Provider>
+    </Provider>
   );
 };
 
