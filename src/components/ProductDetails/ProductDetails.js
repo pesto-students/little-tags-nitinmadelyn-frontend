@@ -80,8 +80,8 @@ const ProductDetails = ({ cart, addToCart }) => {
 
                   <div className="box">
                     <div className="row">
-                      <h2>{item.title}</h2>
-                      <span>₹ {item.price}</span>
+                      <h1>{item.title}</h1>
+                      <h3>₹ {item.price}</h3>
                     </div>
                     <div className="row">
                       <select style={{ width: "10vw" }}>
@@ -111,12 +111,13 @@ const ProductDetails = ({ cart, addToCart }) => {
                     <button
                       className="button-red"
                       onClick={() => addToCart(item)}
+                      style={{ marginTop: "5vh" }}
                     >
                       Add to cart
                     </button>
                     <button
                       className="button-red"
-                      style={{ marginLeft: "2vw" }}
+                      style={{ marginTop: "5vh", marginLeft: "2vw" }}
                     >
                       Add to wishlist
                     </button>
