@@ -14,6 +14,7 @@ import hoodieimg from '../../assets/img/hoodie.png'
 
 const SearchResult = (props) => {
   const searchKeyword = useParams();
+  console.log("params....", searchKeyword)
   const history = useHistory();
   const [products, setProducts] = React.useState([]);
   console.log(props)

@@ -41,7 +41,7 @@ const App = (props) => {
           <Signup />
           <Footer />
         </Route>
-        <Route path="/search/:text" component={Header, SearchResult}>
+        <Route path="/search/:text?" component={Header, SearchResult}>
           <Header handleChangeLanguage={handleChangeLanguage} />
           <SearchResult language={language} />
           <Footer />

@@ -111,8 +111,8 @@ const Header = (props) => {
             <div className="main-menu part-0">
               {/*<div className="row float-right" onClick={toggleMenu}>X</div>*/}
               <div className="row item">
-                <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} style={{height:"21px"}} /></span>
-                <img src={Logo} style={{ height: "29px", width: "auto", paddingLeft: "6px", paddingTop:'7px' }} />
+                <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} /></span>
+                <img src={Logo} />
               </div>
               <br />
               <br />
