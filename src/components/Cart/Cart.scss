@@ -26,7 +26,7 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
 }
 .product-quantity {
   float: left;
-  display: inline;
+  display: flex;
   width: 10%;
 }
 .product-removal {
@@ -127,15 +127,18 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   }
 
   .remove-product {
-    border: 0;
-    padding: 4px 8px;
-    background-color: #c30;
-    color: #fff;
-    font-family: $font-bold;
-    font-size: 12px;
-    border-radius: 3px;
-    border: 1px solid #fff;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    border-color: #c30;
     border-radius: 5px;
+    padding: 1rem 0;
+    width: 2rem;
+    height: 1rem;
+    display: flex;
+    color: #eee;
+    align-items: center;
+    justify-content: center;
   }
 
   .remove-product:hover {
@@ -239,10 +242,6 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     }
   }
 
-  .product-quantity:before {
-    content: "x";
-  }
-
   .product-removal {
     width: auto;
   }
@@ -287,6 +286,8 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   background: transparent;
   border-color: transparent;
   cursor: pointer;
+  border-color: #c30;
+  border-radius: 5px;
   padding: 1rem 0;
   width: 2rem;
   height: 1rem;
@@ -294,4 +295,7 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   color: #eee;
   align-items: center;
   justify-content: center;
+}
+.button:hover {
+  background-color: rgb(241, 94, 45);
 }

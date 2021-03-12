@@ -124,6 +124,7 @@ const ProductDetails = () => {
                         amount={amount}
                       />
                     </div>
+                    <hr />
                     <div className="row" style={{ display: "inline-block" }}>
                       <Link
                         to="/cart"

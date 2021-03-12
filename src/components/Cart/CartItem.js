@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../../context/cart-context";
-import { FaPlus, FaMinus } from "react-icons/fa";
+import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 
 const CartItem = ({ id, img, title, price, amount, description }) => {
   const { remove, increase, decrease, toggleAmount } = useGlobalContext();
@@ -13,7 +13,9 @@ const CartItem = ({ id, img, title, price, amount, description }) => {
         <div className="product-title">{title}</div>
         <p className="product-description">{description}</p>
       </div>
-      <div className="product-price">₹ {price.toFixed(2)}</div>
+      <div style={{ marginTop: "10px" }} className="product-price">
+        ₹ {price.toFixed(2)}
+      </div>
       <div className="product-quantity">
         <button
           type="button"
@@ -22,8 +24,11 @@ const CartItem = ({ id, img, title, price, amount, description }) => {
         >
           <FaMinus />
         </button>
-        <p className="amount">{amount}</p>
+        <p style={{ marginLeft: "1vw", marginTop: "10px" }} className="amount">
+          {amount}
+        </p>
         <button
+          style={{ marginLeft: "1vw" }}
           type="button"
           className="button"
           onClick={() => toggleAmount(id, "inc")}
@@ -33,10 +38,12 @@ const CartItem = ({ id, img, title, price, amount, description }) => {
       </div>
       <div className="product-removal">
         <button className="remove-product" onClick={() => remove(id)}>
-          Remove
+          <FaTrash />
         </button>
       </div>
-      <div className="product-line-price">₹ {(price * amount).toFixed(2)}</div>
+      <div style={{ marginTop: "10px" }} className="product-line-price">
+        ₹ {(price * amount).toFixed(2)}
+      </div>
     </div>
   );
 };
