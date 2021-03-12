@@ -13,13 +13,13 @@ import {
   FromattedHTMLMessage,
 } from "react-intl";
 import flatten from "flat";
-import { connect } from "react-redux";
-import { addToCart } from "../../containers/redux/actions/cart";
+import { useGlobalContext } from "../../context/cart-context";
 
 import Colors from "./Colors";
 import DetailsThumb from "./DetailsThumb";
+import AmountButtons from "./AmountButtons";
 
-const ProductDetails = ({ cart, addToCart }) => {
+const ProductDetails = () => {
   const [product, setProduct] = useState([
     {
       _id: "1",
@@ -39,9 +39,28 @@ const ProductDetails = ({ cart, addToCart }) => {
     },
   ]);
 
-  console.log({ cart });
-
+  const { addToCart } = useGlobalContext();
   const [index, setIndex] = useState(0);
+  const [amount, setAmount] = useState(1);
+
+  const increase = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount + 1;
+      // if (tempAmount > stock) {
+      //   tempAmount = stock;
+      // }
+      return tempAmount;
+    });
+  };
+  const decrease = () => {
+    setAmount((oldAmount) => {
+      let tempAmount = oldAmount - 1;
+      if (tempAmount < 1) {
+        tempAmount = 1;
+      }
+      return tempAmount;
+    });
+  };
 
   const myRef = React.createRef();
 
@@ -83,44 +102,53 @@ const ProductDetails = ({ cart, addToCart }) => {
                       <h1>{item.title}</h1>
                       <h3>₹ {item.price}</h3>
                     </div>
-                    <div className="row">
-                      <select style={{ width: "10vw" }}>
+
+                    {/* <Colors colors={item.colors} /> */}
+
+                    <p>{item.description}</p>
+                    <p>{item.content}</p>
+                    <div className="row" style={{ display: "inline-block" }}>
+                      {/* <select style={{ width: "10vw" }}>
                         <option>S</option>
                         <option>M</option>
                         <option>L</option>
                         <option>XL</option>
                         <option>XXL</option>
                         <option>XXL</option>
-                      </select>
+                      </select> */}
 
-                      <input
-                        type="number"
-                        name="minPrice"
-                        placeholder="Quantity"
-                        min="1"
-                        max="30"
+                      <AmountButtons
                         className="price-filter"
+                        increase={increase}
+                        decrease={decrease}
+                        amount={amount}
                       />
                     </div>
-
-                    {/* <Colors colors={item.colors} /> */}
-
-                    <p>{item.description}</p>
-                    <p>{item.content}</p>
-
-                    <button
-                      className="button-red"
-                      onClick={() => addToCart(item)}
-                      style={{ marginTop: "5vh" }}
-                    >
-                      Add to cart
-                    </button>
-                    <button
-                      className="button-red"
-                      style={{ marginTop: "5vh", marginLeft: "2vw" }}
-                    >
-                      Add to wishlist
-                    </button>
+                    <div className="row" style={{ display: "inline-block" }}>
+                      <Link
+                        to="/cart"
+                        className="button-red"
+                        style={{ marginTop: "5vh" }}
+                        onClick={() =>
+                          addToCart(
+                            item._id,
+                            item.title,
+                            item.price,
+                            item.description,
+                            item.src[index],
+                            amount
+                          )
+                        }
+                      >
+                        Add to cart
+                      </Link>
+                      <button
+                        className="button-red"
+                        style={{ marginTop: "5vh", marginLeft: "2vw" }}
+                      >
+                        Add to wishlist
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -132,16 +160,4 @@ const ProductDetails = ({ cart, addToCart }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { cart } = state;
-
-  return {
-    cart,
-  };
-};
-
-const mapDispatchToProps = {
-  addToCart,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProductDetails);
+export default ProductDetails;
