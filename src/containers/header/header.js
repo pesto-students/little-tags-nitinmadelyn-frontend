@@ -18,6 +18,7 @@ import womenIcon from "../../assets/img/women.svg";
 import kidIcon from "../../assets/img/kid.svg";
 
 import { LanguageContext, languageObj } from "../../context/language-context";
+import { useGlobalContext } from "../../context/cart-context";
 import {
   IntlProvider,
   FormattedMessage,
@@ -29,6 +30,8 @@ import { useHistory, useParams } from "react-router-dom";
 const Header = (props) => {
   const searchKeyword = useParams();
   const history = useHistory();
+
+  const { amount } = useGlobalContext();
 
   const [isSearchboxOpen, setIsSearchboxOpen] = React.useState(
     searchKeyword.text
@@ -204,6 +207,7 @@ const Header = (props) => {
                         width="30px"
                         className="icon"
                       />
+                      {amount}
                     </Link>
                   </li>
                   <li>

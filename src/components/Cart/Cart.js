@@ -81,10 +81,17 @@ const Cart = () => {
           </div>
         </div>
 
-        <button className="cart-clear" onClick={clearCart}>
+        <button className="checkout">Checkout</button>
+        <Link to="/" className="cart-clear" onClick={clearCart}>
+          Continue shopping
+        </Link>
+        <button
+          className="cart-clear"
+          style={{ marginLeft: "2vw" }}
+          onClick={clearCart}
+        >
           Clear cart
         </button>
-        <button className="checkout">Checkout</button>
       </div>
     </main>
   );
