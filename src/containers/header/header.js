@@ -49,7 +49,6 @@ const Header = (props) => {
 
   const togglelanguageDropdown = (event) => {
     setIsHiddenLanguageDropdown(!isHiddenLanguageDropdown);
-    //props.handleChangeLanguage(event)
   };
 
   React.useEffect(
@@ -67,22 +66,24 @@ const Header = (props) => {
   }
   let searchBox = (
       <form onSubmit={submitHandler}>
-      <input
-        type="text"
-        name="q"
-        placeholder="Search"
-        onBlur={toggleSearch}
-        ref={searchInput}
-        value={searchKeyword.text}
-      />
+        <input
+          type="text"
+          name="q"
+          placeholder="Search"
+          //onBlur={toggleSearch}
+          //onChange={(element) => searchKeyword.text = element.target.value}
+          ref={searchInput}
+          value={searchKeyword.text}
+          className="header-search-input"
+        />
       </form>
     ),
     searchBoxIcon = (
       <SearchOutline
-        color={"#444"}
+        color={"#fff"}
         title={"Search"}
-        height="30px"
-        width="30px"
+        height="36px"
+        width="32px"
         className="icon"
         onClick={toggleSearch}
       />
@@ -96,7 +97,7 @@ const Header = (props) => {
     setIsMenuOpen(!isMenuOpen);
   };
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const menuStyle = { display: (isMenuOpen) ? 'block' : 'none' } //({isMenuOpen}) => (isMenuOpen)? 'block':'none'
+  const menuStyle = { display: (isMenuOpen) ? 'block' : 'none' }
   
   return (
     <LanguageContext.Consumer>
@@ -106,49 +107,52 @@ const Header = (props) => {
         messages={flatten(languageObj[language.language])}
       >
         <header className="section black-bg">
-          <div className="menu-shadow" onClick={toggleMenu} style={menuStyle}>&nbsp;</div>
-          <nav className="menu-box" style={menuStyle}>
-            <div className="main-menu part-0">
-              {/*<div className="row float-right" onClick={toggleMenu}>X</div>*/}
-              <div className="row item">
-                <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} /></span>
-                <img src={Logo} />
-              </div>
-              <br />
-              <br />
-              <br />
-              <div className="row item item1"><img src={aboutIcon} /><span><FormattedMessage id="footer.links1.link1" /></span></div>
-              <div className="row item item1"><img src={contactIcon} /><span><FormattedMessage id="footer.links2.link1" /></span></div>
-            </div>
-            <div className="main-menu part-1">
-              <img src={menIcon} /> <span><FormattedMessage id="home.mens" /></span>
-            </div>
-            <div className="main-menu part-2">
-              <img src={womenIcon} />
-              <span><FormattedMessage id="home.women" /></span>
-            </div>
-            <div className="main-menu part-3">
-              <img src={kidIcon} />
-              <span><FormattedMessage id="home.kids" /></span>
-            </div>
-            <div></div>
-          </nav>
           <div className="row">
-            <div className="col span-1-of-2 header-col">
-              <MenuOutline
-                color={"#fff"}
-                title={"Menu"}
-                height="36px"
-                width="36px"
-                className="menu"
-                onClick={toggleMenu}
-              />
-              <Link to="/">
-                <img src={Logo} className="logo" alt="logo" />
-              </Link>
-            </div>
-            <div className="col span-1-of-2 header-col">
-              <ul className="nav">
+            {/* Header left menu & logo */}
+            
+            <div className="menu-shadow" onClick={toggleMenu} style={menuStyle}>&nbsp;</div>
+            <nav className="menu-box" style={menuStyle}>
+              <div className="main-menu part-0">
+                {/*<div className="row float-right" onClick={toggleMenu}>X</div>*/}
+                <div className="row item">
+                  <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} /></span>
+                  <img src={Logo} className="logo menu-logo" />
+                </div>
+                <br />
+                <br />
+                <br />
+                <div className="row item item1"><img src={aboutIcon} /><span><FormattedMessage id="footer.links1.link1" /></span></div>
+                <div className="row item item1"><img src={contactIcon} /><span><FormattedMessage id="footer.links2.link1" /></span></div>
+              </div>
+              <div className="main-menu part-1">
+                <img src={menIcon} /> <span><FormattedMessage id="home.mens" /></span>
+              </div>
+              <div className="main-menu part-2">
+                <img src={womenIcon} />
+                <span><FormattedMessage id="home.women" /></span>
+              </div>
+              <div className="main-menu part-3">
+                <img src={kidIcon} />
+                <span><FormattedMessage id="home.kids" /></span>
+              </div>
+              <div></div>
+            </nav>
+
+            <MenuOutline
+              color={"#fff"}
+              title={"Menu"}
+              height="36px"
+              width="36px"
+              className="menu"
+              onClick={toggleMenu}
+            />
+            <Link to="/">
+              <img src={Logo} className="logo" alt="logo" />
+            </Link>
+          
+            
+            
+            <ul className="nav">
                 <li>
                   {isSearchboxOpen ? searchBox : null}
                   {searchBoxIcon}
@@ -156,29 +160,29 @@ const Header = (props) => {
                 <li>
                   <Link to="/login">
                     <PersonOutline
-                      color={"#444"}
-                      title={"Search"}
-                      height="30px"
-                      width="30px"
+                      color={"#fff"}
+                      title={"User"}
+                      height="36px"
+                      width="32px"
                       className="icon"
                     />
                   </Link>
                 </li>
                 <li>
                   <CartOutline
-                    color={"#444"}
-                    title={"Search"}
-                    height="30px"
-                    width="30px"
+                    color={"#fff"}
+                    title={"Cart"}
+                    height="36px"
+                    width="32px"
                     className="icon"
                   />
                 </li>
                 <li>
                   <GlobeOutline
-                    color={"#444"}
-                    title={"Search"}
-                    height="30px"
-                    width="30px"
+                    color={"#fff"}
+                    title={"Language"}
+                    height="36px"
+                    width="32px"
                     className="icon"
                     onClick={togglelanguageDropdown}
                   />
@@ -211,8 +215,28 @@ const Header = (props) => {
                   ) : null}
                 </li>
               </ul>
-            </div>
+            
           </div>
+
+
+          {/*<div className="row">
+            <div className="col span-1-of-2 header-col">
+              <MenuOutline
+                color={"#fff"}
+                title={"Menu"}
+                height="36px"
+                width="36px"
+                className="menu"
+                onClick={toggleMenu}
+              />
+              <Link to="/">
+                <img src={Logo} className="logo" alt="logo" />
+              </Link>
+            </div>
+            <div className="col span-1-of-2 header-col">
+              
+            </div>
+          </div>*/}
         </header>
         </IntlProvider>
       }

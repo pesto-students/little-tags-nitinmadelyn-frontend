@@ -51,6 +51,21 @@
   display: inline-block;
   float: left;
   border-radius: 5px;
+  position: relative;
+}
+
+.wishlist-icon {
+  position: absolute;
+  right: 16px;
+  color: #000;
+  top: 16px;
+}
+
+svg {
+  cursor: pointer;
+}
+svg:hover {
+  color: #000;
 }
 
 .item h2 {

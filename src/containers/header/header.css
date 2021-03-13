@@ -1,16 +1,17 @@
 header {
-  height: 74px;
+  height: auto;
   position: fixed;
   top: 0;
   width: 94%;
   z-index: 10;
+  overflow: hidden;
 }
 main {
-  margin-top: 74px;
+  margin-top: 5.8%;
 }
 .black-bg {
   background-color: black;
-  padding: 0 40px;
+  padding: 5px 40px;
 }
 
 .menu {
@@ -22,12 +23,12 @@ main {
 ul {
   list-style: none;
   float: right;
-  margin: 10px 0px 0px 16px;
+  margin: 5px 0;
 }
 
 li {
-  display: inline-block;
-  margin-right: 10px;
+  display: table-cell;
+  padding-right: 10px;
 }
 
 li svg {
@@ -44,17 +45,18 @@ li:last-child {
 }
 
 .icon:hover > svg {
-  color: #fff
+  color: #c30
 }
 
-input {
+.header-search-input {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #fff;
   background-color: #000;
   color: #fff;
-  margin: -32px -171px;
+  margin: 0px -466px;
   position: absolute;
+  width: 34%;
 }
 
 .language-dropdown {
@@ -185,6 +187,15 @@ input {
   .part-1 { width: 85%;}
   .part-2 { width: 75%;}
   .part-3 { width: 65%;}
+  .menu-logo {
+    width: 117px !important;
+  }
+  main {
+    margin-top: 7.8%;
+  }
+  .header-search-input {
+    margin: 0px -286px;
+  }
 }
 
 /* Mobile devices */
@@ -212,7 +223,7 @@ input {
     width: 25px !important;
   }
   .nav {
-    margin: 7px 0px 0px 16px;
+    /*margin: 7px 0px 0px 16px;*/
   }
   .language-dropdown{
     top: 40px;

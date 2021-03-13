@@ -3,6 +3,7 @@ import maincss from "../../assets/css/main.css";
 import searchresultcss from "./searchresult.css";
 import { Link } from "react-router-dom";
 import { LanguageContext, languageObj } from "../../context/language-context";
+import { HeartOutline, Heart } from "react-ionicons";
 import {
   IntlProvider,
   FormattedMessage,
@@ -11,6 +12,7 @@ import {
 import flatten from "flat";
 import { useHistory, useParams } from "react-router-dom";
 import hoodieimg from '../../assets/img/hoodie.png'
+import Product from './Product/Product';
 
 const SearchResult = (props) => {
   const searchKeyword = useParams();
@@ -129,12 +131,22 @@ const SearchResult = (props) => {
                     </div>
                     <div className="item-container">
                     { products.map((product) => 
-                            <div className="row item">
-                            <img src={hoodieimg} className="item-image" />
-                            <h2>{product.name}</h2>
-                            <div className="item-price">{product.currency}{product.price}</div>
-                            <button className="button-red item-add-to-cart"><FormattedMessage id="category.addtocart" /></button>
-                        </div>
+                            <Product product={product} />
+                        //  <div className="row item">
+                        //    <span className="wishlist-icon">
+                        //      <Heart
+                        //        color={'#c30'} 
+                        //        fill={'#c30'}
+                        //        title={'Wishlist'}
+                        //        height="32px"
+                        //        width="32px"
+                        //      />
+                        //    </span>
+                        //    <img src={hoodieimg} className="item-image" />
+                        //    <h2>{product.name}</h2>
+                        //    <div className="item-price">{product.currency}{product.price}</div>
+                        //    <button className="button-red item-add-to-cart"><FormattedMessage id="category.addtocart" /></button>
+                        //</div>
                       ) 
                     }
                     {/*<div className="row item">
