@@ -22,17 +22,23 @@ import AmountButtons from "./AmountButtons";
 const ProductDetails = () => {
   const [product, setProduct] = useState([
     {
-      _id: "1",
-      title: "Nike Shoes",
+      _id: "3",
+      title: "NEW Allen Solly Sport",
       src: [
-        "https://www.upsieutoc.com/images/2020/06/27/img1.jpg",
-        "https://www.upsieutoc.com/images/2020/06/27/img2.jpg",
-        "https://www.upsieutoc.com/images/2020/06/27/img3.jpg",
-        "https://www.upsieutoc.com/images/2020/06/27/img4.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/5f204e75-5886-4c31-9fcd-9772beb959011612421834525-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-1.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/537a3697-4b71-455a-b604-b5ef2e33a9091612421834473-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-3.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/dd4ed17f-49f7-4738-b07f-5638dc50327d1612421834446-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-4.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/77d6a1e6-6289-4f33-b309-34d9396075421612421834421-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-5.jpg",
+        "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/f9d63e2e-2181-472b-a677-603c79939fa51612421834498-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-2.jpg",
       ],
-      description: "Nike React Infinity Run Flyknit A.I.R. Chaz Bear",
-      content:
-        "The Nike React Infinity Run Flyknit is designed to help reduce injury and keep you on the run. More foam and improved upper details provide a secure and cushioned feel. Lace up and feel the potential as you hit the road. Graphics are designed by musician Chaz Bear.",
+      description:
+        "Men Navy Blue & Rust Orange Colourblocked Polo Collar T-shirt",
+      content: `Navy blue, rust orange and White colourblocked T-shirt, has a polo collar, button closure, and short sleeves
+        Size & Fit
+        The model (height 6') is wearing a size M
+        Material & Care
+        60% cotton and 40% polyester
+        Machine-wash`,
       price: 2300,
       colors: ["red", "black", "crimson", "teal"],
       count: 1,
