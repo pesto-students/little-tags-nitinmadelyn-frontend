@@ -1,0 +1,77 @@
+.filter-bg {
+  background-color: #000;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0 0 20px 0;
+}
+
+.profile-menu {
+  list-style: none;
+  text-decoration: none;
+  font-size: 120%;
+  display: grid;
+  float: left;
+  text-align: left;
+}
+
+.profile-menu li {
+  padding: 5px 0;
+  position: relative;
+}
+
+.profile-menu li div {
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-menu li div{
+  margin: -30px 40px;
+  position: absolute;
+}
+
+.section-right {
+  padding-left: 50px;
+  min-height: 75vh;
+}
+
+.right-container {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+}
+
+.edit-btn {
+  width: 120px;
+}
+
+.margin-right-10px {
+  margin-right: 10px;
+}
+
+.address-row {
+  border: 1px solid #fff;
+  display: block;
+  float: left;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.address-row h3 {
+  display: block;
+  color: #c30;
+  width: 100%;
+  padding: 0;
+}
+
+.float-right {
+  display: block;
+  float: right;
+  margin-bottom: 10px;
+}
+
+.edit-btn a {
+  text-decoration: none;
+  color: #fff;
+}

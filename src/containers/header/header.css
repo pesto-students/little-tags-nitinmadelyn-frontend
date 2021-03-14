@@ -136,11 +136,19 @@ input {
   display: grid;
 }
 
+.part-0:hover {
+  width: 102%;
+}
+
 .part-1 {
   width: 90%;
   background-color: #f27406;
   z-index: 5;
   box-shadow: -19px -1px 13px 1px #000;
+}
+
+.part-1:hover {
+  width: 92%;
 }
 
 .part-2 {
@@ -150,11 +158,19 @@ input {
   box-shadow: -19px -1px 13px 1px #000;
 }
 
+.part-2:hover {
+  width: 82%;
+}
+
 .part-3 {
   width: 70%;
   background-color: #f2b705;
   z-index: 3;
   box-shadow: -19px -1px 13px 1px #000;
+}
+
+.part-3:hover {
+  width: 72%;
 }
 
 .float-right {
@@ -180,6 +196,12 @@ input {
   }
   svg {
     color: #fff !important;
+  }
+  header {
+    height: 64px;
+  }
+  main {
+    margin-top: 64px;
   }
 }
 
@@ -216,6 +238,12 @@ input {
     padding: 0;
     font-size: 70%;
     z-index: 1;
+  }
+  header {
+    height: 44px;
+  }
+  main {
+    margin-top: 44px;
   }
 }
 
