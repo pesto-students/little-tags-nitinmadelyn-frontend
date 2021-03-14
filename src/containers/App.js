@@ -14,6 +14,7 @@ import Home from "../components/Home";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import Error from "../components/error";
 import Cart from "../components/Cart/Cart";
+import Checkout from "../components/Checkout/Checkout";
 
 const App = (props) => {
   const [language, setLanguage] = React.useState("en");
@@ -44,16 +45,19 @@ const App = (props) => {
           <Route path="/search/:text" component={(Header, SearchResult)}>
             <SearchResult language={language} />
           </Route>
-          <Route path="/profile/:tabName?" component={(Profile)}>
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Profile />
-          <Footer />
-        </Route>
+          <Route path="/profile/:tabName?" component={Profile}>
+            <Header handleChangeLanguage={handleChangeLanguage} />
+            <Profile />
+            <Footer />
+          </Route>
           <Route path="/product-details/:proId">
             <ProductDetails />
           </Route>
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route path="/checkout">
+            <Checkout />
           </Route>
           <Route path="*">
             <Error />
