@@ -93,7 +93,7 @@ export default function Section({ category, imgSrc }) {
               <span>
                 <ul>
                   <li><Link to="search/shorts"><img src={shorts} title="Shorts" /></Link></li>
-                  <li><Link to="search/joggers"><img src={joggers} title="Joggers" /></Link></li>
+                  <li><Link to="search/joggers"><img src={joggers} title="Joggers" className="jogger-img" /></Link></li>
                 </ul>
               </span>
             </div>

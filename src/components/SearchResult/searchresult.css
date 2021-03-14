@@ -75,6 +75,7 @@ svg:hover {
   clear: both;
   padding: 0 10px;
   margin: 0;
+  color: #fff;
 }
 
 .item-image {
@@ -91,6 +92,7 @@ svg:hover {
   padding: 10px;
   font-size: 130%;
   clear: both;
+  color: #fff;
 }
 
 .item-add-to-cart {
@@ -170,7 +172,18 @@ select {
 }
 /* iPads, Tablets */
 @media only screen and (max-width: 768px) {
-  
+  .main-container {
+    padding: 30px;
+  }
+  .profile-menu {
+    padding-left: 0px;
+  }
+  .address-row h3 {
+    margin: 0 0 5px;
+  }
+  .address-row p {
+    margin: 5px 0 0;
+  }
 }
 
 /* Mobile devices */
@@ -202,6 +215,12 @@ select {
   }
   .margin-top-40{
     margin-top: 40px;
+  }
+  .main-container {
+    padding: 10px 20px;
+  }
+  .filter-bg {
+    margin-bottom: 10px;
   }
 }
 

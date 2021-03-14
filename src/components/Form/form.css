@@ -1,5 +1,34 @@
 .form-input {
   margin: 10px 0;
-  width: 100%;
+  width: 97%;
+}
 
+
+/* Desktops, large screens */
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
+}
+/* iPads, Tablets */
+@media only screen and (max-width: 768px) {
+  .form-input {
+    width: 96%;
+  }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  
+}
+
+@media only screen and (max-width: 375px) {
+  
+}
+
+@media only screen and (max-width: 320px) {
+  
 }

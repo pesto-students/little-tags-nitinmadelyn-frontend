@@ -22,6 +22,7 @@ import womenIcon from "../../assets/img/women-white.svg";
 import kidIcon from "../../assets/img/kid-white.svg";
 
 import flatten from "flat";
+import Product from "../../components/SearchResult/Product/Product"
 
 const Main = (props) => {
   const [currentSection, setSection] = useState("Men");
@@ -49,6 +50,19 @@ const Main = (props) => {
     changeSection(section);
   };
 
+  let products;
+  if(props.language === 'es'){
+    products = [{id: 1, name:"Sudadera NIKE 1", currency: "€", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"},
+    {id: 2, name:"Sudadera NIKE 2", currency: "€", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg"},
+    {id: 3, name:"Sudadera NIKE 3", currency: "€", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4318138/2018/5/4/11525433792765-HERENOW-Men-Black-Printed-Round-Neck-T-shirt-2881525433792598-1.jpg"},
+    {id: 4, name:"Sudadera NIKE 4", currency: "€", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10576462/2020/6/17/691eb1a3-3549-4211-a62f-df38a8c37e481592390098023-Roadster-Men-Tshirts-5491592390094405-1.jpg"}]
+  } else {
+    products = [{id: 1, name:"NIKE Hoodie", currency: "₹", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg"},
+    {id: 2, name:"NIKE Hoodie 1", currency: "₹", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg"},
+    {id: 3, name:"NIKE Hoodie 2", currency: "₹", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4318138/2018/5/4/11525433792765-HERENOW-Men-Black-Printed-Round-Neck-T-shirt-2881525433792598-1.jpg"},
+    {id: 4, name:"NIKE Hoodie 3", currency: "₹", price:"999", image:"https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10576462/2020/6/17/691eb1a3-3549-4211-a62f-df38a8c37e481592390098023-Roadster-Men-Tshirts-5491592390094405-1.jpg"}];
+  }
+  
   return (
     <LanguageContext.Consumer>
       {({ language }) => (
@@ -57,8 +71,21 @@ const Main = (props) => {
           messages={flatten(languageObj[language])}
         >
           <main>
-            <Slider />
-
+            {/*<Slider />*/}
+            <section className="section new-arrival" style={{ backgroundImage: `url(${newarrival})` }}>
+            <div className="row">
+              <div className="banner-text-box">
+                <h1>
+                  <FormattedMessage id="home.bannerText" >
+                    {(text) => ReactHtmlParser(text)}
+                  </FormattedMessage>
+                </h1>
+                <button className="button-red">
+                  <FormattedMessage id="home.bannerButton" />
+                </button>
+              </div>
+            </div>
+          </section>
             <section className="section">
               <div className="row">
                 <div className="main-bg">
@@ -93,6 +120,25 @@ const Main = (props) => {
               </div>
             </section>
             {getSection()}
+
+            <section className="section">
+                <div className="row">
+                  <div className="main-bg" style={{height:"auto"}}>
+                    <div className="row" style={{padding:"0 20px"}}>
+                      <h1>TRENDING</h1>
+                      <hr />
+                    </div>
+                    <div className="item-container" style={{margin: "0px 10px"}}>
+                      <Product product={products[0]} />
+                      <Product product={products[1]} />
+                      <Product product={products[2]} />
+                      <Product product={products[3]} />
+                      <Product product={products[1]} />
+                    </div>
+                    <div className="row">&nbsp;</div>
+                  </div>
+                </div>
+            </section>
           </main>
         </IntlProvider>
       )}
@@ -102,6 +148,7 @@ const Main = (props) => {
 
 export default Main;
 
+{/*<Product product={product} />*/}
 {
   /*<main>
       <section className="section new-arrival">

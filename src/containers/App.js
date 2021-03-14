@@ -29,7 +29,7 @@ const App = (props) => {
       <Switch>
         <Route path="/" exact>
           <Header handleChangeLanguage={handleChangeLanguage} />
-          <Main />
+          <Main language={language} />
           <Footer />
         </Route>
         <Route path="/login">

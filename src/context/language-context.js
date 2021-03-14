@@ -25,7 +25,8 @@ export const languageObj = {
       bannerButton: "SHOP NOW",
       mens: 'MEN',
       women: 'WOMEN',
-      kids: 'KIDS'
+      kids: 'KIDS',
+      trending: "Trending"
     },
     login: {
       title: 'LOGIN',
@@ -94,7 +95,8 @@ export const languageObj = {
       bannerButton: "COMPRA AHORA",
       mens: 'HOMBRES',
       women: 'MUJERES',
-      kids: 'NIÑOS'
+      kids: 'NIÑOS',
+      trending: "Tendencias"
     },
     login: {
       title: 'ACCESO',
