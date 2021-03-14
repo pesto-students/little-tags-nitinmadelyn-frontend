@@ -2,10 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import { FaPlus, FaMinus } from "react-icons/fa";
 
+import { LanguageContext, languageObj } from "../../context/language-context";
+import {
+  IntlProvider,
+  FormattedMessage,
+  FromattedHTMLMessage,
+} from "react-intl";
+import flatten from "flat";
+
 const AmountButtons = ({ increase, decrease, amount }) => {
   return (
     <Wrapper className="amount-btns">
-      <h3>Quantity: </h3>
+      <h3>{<FormattedMessage id="productDetails.quantity" />}: </h3>
       <button type="button" className="amount-btn" onClick={decrease}>
         <FaMinus />
       </button>
