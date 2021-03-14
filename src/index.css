@@ -1,9 +1,21 @@
+html {
+  --top-spacing: 100px;
+  scroll-padding-top: var(--top-spacing);
+}
+
 body {
   margin: 0;
   font-family: "Montserrat",sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: var(--top-spacing);
+  
+  /*margin: var(--top-spacing) auto;*/
+  
+  /*max-width: 400px;*/
+  /*padding: 0 20px;*/
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

@@ -70,7 +70,7 @@ const Header = (props) => {
           type="text"
           name="q"
           placeholder="Search"
-          //onBlur={toggleSearch}
+          onBlur={toggleSearch}
           //onChange={(element) => searchKeyword.text = element.target.value}
           ref={searchInput}
           value={searchKeyword.text}
@@ -115,7 +115,7 @@ const Header = (props) => {
               <div className="main-menu part-0">
                 {/*<div className="row float-right" onClick={toggleMenu}>X</div>*/}
                 <div className="row item">
-                  <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} /></span>
+                  <span onClick={toggleMenu} style={{cursor: "pointer"}}><img src={closeIcon} className="close-icon" /></span>
                   <img src={Logo} className="logo menu-logo" />
                 </div>
                 <br />

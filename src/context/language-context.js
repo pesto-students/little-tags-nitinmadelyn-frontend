@@ -92,7 +92,7 @@ export const languageObj = {
       bannerButton: "COMPRA AHORA",
       mens: 'HOMBRES',
       women: 'MUJERES',
-      kids: 'NIÑAS / NIÑOS'
+      kids: 'NIÑOS'
     },
     login: {
       title: 'ACCESO',

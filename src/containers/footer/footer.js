@@ -15,7 +15,7 @@ const Footer = (props) => {
           messages={flatten(languageObj[language.language])}
         >
           <footer>
-            <ul className="footer-links">
+            {/*<ul className="footer-links">
               <li><FormattedMessage id="footer.links1.title" /></li>
               <li><FormattedMessage id="footer.links1.link1" /></li>
               <li><FormattedMessage id="footer.links1.link2" /></li>
@@ -31,7 +31,7 @@ const Footer = (props) => {
               <li className="align-center">
                 <img src={visamastercard} />
               </li>
-            </ul>
+            </ul>*/}
             <p className="legal-text">
             <FormattedMessage id="footer.legal" />
             </p>
