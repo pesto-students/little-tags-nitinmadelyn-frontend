@@ -1,6 +1,7 @@
-/* .app {
+.app {
   background-color: #222121;
-} */
+  color: #fff;
+}
 .details {
   display: flex;
   justify-content: space-around;
@@ -34,7 +35,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-.box .row span {
+.box .row h3 {
   color: crimson;
 }
 .box .colors button {

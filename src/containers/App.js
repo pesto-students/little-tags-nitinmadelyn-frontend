@@ -8,9 +8,12 @@ import Signup from "../components/Signup/Signup";
 import Profile from "../components/Profile/Profile";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { LanguageContext } from "../context/language-context";
+import { CartProvider } from "../context/cart-context";
 import { Route, Switch, useParams } from "react-router-dom";
 import Home from "../components/Home";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import Error from "../components/error";
+import Cart from "../components/Cart/Cart";
 
 const App = (props) => {
   const [language, setLanguage] = React.useState("en");
@@ -26,38 +29,38 @@ const App = (props) => {
 
   return (
     <LanguageContext.Provider value={{ language: language }}>
-      <Switch>
-        <Route path="/" exact>
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Main />
-          <Footer />
-        </Route>
-        <Route path="/login">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Login />
-          <Footer />
-        </Route>
-        <Route path="/signup">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <Signup />
-          <Footer />
-        </Route>
-        <Route path="/profile/:tabName?" component={(Profile)}>
+      <CartProvider>
+        <Header handleChangeLanguage={handleChangeLanguage} />
+        <Switch>
+          <Route path="/" exact>
+            <Main />
+          </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/search/:text" component={(Header, SearchResult)}>
+            <SearchResult language={language} />
+          </Route>
+          <Route path="/profile/:tabName?" component={(Profile)}>
           <Header handleChangeLanguage={handleChangeLanguage} />
           <Profile />
           <Footer />
         </Route>
-        <Route path="/search/:text?" component={(Header, SearchResult)}>
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <SearchResult language={language} />
-          <Footer />
-        </Route>
-        <Route path="/product-details/:proId">
-          <Header handleChangeLanguage={handleChangeLanguage} />
-          <ProductDetails />
-          <Footer />
-        </Route>
-      </Switch>
+          <Route path="/product-details/:proId">
+            <ProductDetails />
+          </Route>
+          <Route path="/cart">
+            <Cart />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+        <Footer />
+      </CartProvider>
     </LanguageContext.Provider>
   );
 };
