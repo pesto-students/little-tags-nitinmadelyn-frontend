@@ -12,6 +12,11 @@ footer {
   float: left;
 }
 
+.legal-text a{
+  text-decoration: none;
+  color: #c30;
+}
+
 .footer-links li:first-child{
   font-size: 110%;
 }
@@ -38,7 +43,6 @@ footer {
   max-width: 100%;
   margin: 0  auto;
   text-align: center;
-  padding-top: 40px;
 }
 
 
@@ -73,7 +77,6 @@ footer {
     margin: 10px 0px 0px 0px;
   }
   .legal-text {
-    padding-top: 50px;
     font-size: 80%;
   }
 }

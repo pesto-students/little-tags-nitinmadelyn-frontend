@@ -4,6 +4,8 @@ export const languageObj = {
   en: {
     footer: {
       legal: "© 2021, KLOTHS PVT LTD. ALL RIGHTS RESERVED.",
+      credits:
+        "Made with love by <a href='https://github.com/nitinmadelyn' target='_blank'>@nitin</a> & <a href='https://github.com/shubhadeep29' target='_blank'>@shubhdeep</a>",
       links1: {
         title: "INFORMATION",
         link1: "Who We Are",
@@ -94,6 +96,8 @@ export const languageObj = {
   es: {
     footer: {
       legal: "© 2021, KLOTHS PVT LTD. RESERVADOS TODOS LOS DERECHOS.",
+      credits:
+        "Made with love by <a href='https://github.com/nitinmadelyn' target='_blank'>@nitin</a> & <a href='https://github.com/shubhadeep29' target='_blank'>@shubhdeep</a>",
       links1: {
         title: "INFORMACIÓN",
         link1: "Quienes somos",
@@ -114,7 +118,7 @@ export const languageObj = {
       bannerButton: "COMPRA AHORA",
       mens: "HOMBRES",
       women: "MUJERES",
-      kids: "NIÑAS / NIÑOS",
+      kids: "NIÑOS",
     },
     login: {
       title: "ACCESO",

@@ -5,6 +5,7 @@ import Main from "../containers/main/main";
 import Footer from "../containers/footer/footer";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
+import Profile from "../components/Profile/Profile";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { LanguageContext } from "../context/language-context";
 import { CartProvider } from "../context/cart-context";
@@ -43,6 +44,11 @@ const App = (props) => {
           <Route path="/search/:text" component={(Header, SearchResult)}>
             <SearchResult language={language} />
           </Route>
+          <Route path="/profile/:tabName?" component={(Profile)}>
+          <Header handleChangeLanguage={handleChangeLanguage} />
+          <Profile />
+          <Footer />
+        </Route>
           <Route path="/product-details/:proId">
             <ProductDetails />
           </Route>

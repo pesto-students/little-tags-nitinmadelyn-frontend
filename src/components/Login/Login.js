@@ -1,6 +1,6 @@
 import React from "react";
 import logincss from "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import maincss from "../../assets/css/main.css";
 import {
   FacebookLoginButton,
@@ -13,8 +13,19 @@ import {
   FromattedHTMLMessage,
 } from "react-intl";
 import flatten from 'flat';
+import { useCookies } from 'react-cookie';
 
 const Login = (props) => {
+  const history = useHistory();
+
+  const [cookies, setCookie] = useCookies(['Kloths']);
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    setCookie('username', 'nitin', { path: '/' });
+    history.push('/profile/profile');
+  }
+
   return (
     <LanguageContext.Consumer>
       {(language) => (
@@ -39,7 +50,7 @@ const Login = (props) => {
                 </FormattedMessage>
                 <div className="row">
                   <div className="col span-1-of-2">
-                    <button type="submit" className="button-red login-btn">
+                    <button type="submit" className="button-red login-btn" onClick={handleLogin}>
                     <FormattedMessage id="login.title" />
                     </button>
                   </div>
