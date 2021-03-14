@@ -92,6 +92,21 @@ export const languageObj = {
       clearCart: "Clear cart",
       continueShopping: "Continue shopping",
     },
+    checkout: {
+      title: "CHECKOUT",
+      or: "OR",
+      placeholder: {
+        firstName: "First Name",
+        lastName: "Last Name",
+        mobile: "Mobile Number",
+        addressLine1: "Address line 1",
+        addressLine2: "Address line 2",
+        city: "City",
+        state: "State",
+        pinCode: "Pin code",
+      },
+      payNow: "Pay now",
+    },
   },
   es: {
     footer: {
@@ -183,6 +198,21 @@ export const languageObj = {
       checkout: "Revisa",
       clearCart: "Vaciar carrito",
       continueShopping: "Seguir comprando",
+    },
+    checkout: {
+      title: "REVISA",
+      or: "OR",
+      placeholder: {
+        firstName: "Nombre de pila",
+        lastName: "Apellido",
+        mobile: "Número de teléfono móvil",
+        addressLine1: "Dirección Línea 1",
+        addressLine2: "Dirección Línea 2",
+        city: "Ciudad",
+        state: "Expresar",
+        pinCode: "Código PIN",
+      },
+      payNow: "Pagar ahora",
     },
   },
 };
