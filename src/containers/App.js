@@ -5,6 +5,7 @@ import Main from "../containers/main/main";
 import Footer from "../containers/footer/footer";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
+import Profile from "../components/Profile/Profile";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { LanguageContext } from "../context/language-context";
 import { Route, Switch, useParams } from "react-router-dom";
@@ -41,7 +42,12 @@ const App = (props) => {
           <Signup />
           <Footer />
         </Route>
-        <Route path="/search/:text" component={(Header, SearchResult)}>
+        <Route path="/profile/:tabName?" component={(Profile)}>
+          <Header handleChangeLanguage={handleChangeLanguage} />
+          <Profile />
+          <Footer />
+        </Route>
+        <Route path="/search/:text?" component={(Header, SearchResult)}>
           <Header handleChangeLanguage={handleChangeLanguage} />
           <SearchResult language={language} />
           <Footer />

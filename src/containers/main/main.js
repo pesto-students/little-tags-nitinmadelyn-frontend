@@ -17,6 +17,10 @@ import men from "../../assets/img/men.png";
 import kids from "../../assets/img/kids.jpg";
 import women from "../../assets/img/women.webp";
 
+import menIcon from "../../assets/img/men-white.svg";
+import womenIcon from "../../assets/img/women-white.svg";
+import kidIcon from "../../assets/img/kid-white.svg";
+
 import flatten from "flat";
 
 const Main = (props) => {
@@ -60,19 +64,19 @@ const Main = (props) => {
                 <div className="main-bg">
                   <Tab
                     onClick={handleClick("Men")}
-                    label={<FormattedMessage id="home.mens" />}
+                    label={<img src={menIcon} />}
                     isActive={currentSection === "Men"}
-                  />
+                  />  
                   <Tab
                     onClick={handleClick("Women")}
-                    label={<FormattedMessage id="home.women" />}
+                    label={<img src={womenIcon} />}
                     isActive={currentSection === "Women"}
-                  />
+                  /> 
                   <Tab
                     onClick={handleClick("Kids")}
-                    label={<FormattedMessage id="home.kids" />}
+                    label={<img src={kidIcon} />}
                     isActive={currentSection === "Kids"}
-                  />
+                  /> 
 
                   {/*<div className="col span-1-of-3 main-category">
                   <a href="#" className="active">

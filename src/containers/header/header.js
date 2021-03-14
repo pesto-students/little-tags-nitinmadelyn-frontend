@@ -79,7 +79,7 @@ const Header = (props) => {
     ),
     searchBoxIcon = (
       <SearchOutline
-        color={"#444"}
+        color={"#fff"}
         title={"Search"}
         height="30px"
         width="30px"
@@ -156,7 +156,7 @@ const Header = (props) => {
                 <li>
                   <Link to="/login">
                     <PersonOutline
-                      color={"#444"}
+                      color={"#fff"}
                       title={"Search"}
                       height="30px"
                       width="30px"
@@ -166,7 +166,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <CartOutline
-                    color={"#444"}
+                    color={"#fff"}
                     title={"Search"}
                     height="30px"
                     width="30px"
@@ -175,7 +175,7 @@ const Header = (props) => {
                 </li>
                 <li>
                   <GlobeOutline
-                    color={"#444"}
+                    color={"#fff"}
                     title={"Search"}
                     height="30px"
                     width="30px"

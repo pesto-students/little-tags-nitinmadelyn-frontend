@@ -3,6 +3,7 @@ import maincss from "../../assets/css/main.css";
 import searchresultcss from "./searchresult.css";
 import { Link } from "react-router-dom";
 import { LanguageContext, languageObj } from "../../context/language-context";
+import { HeartOutline, Heart } from "react-ionicons";
 import {
   IntlProvider,
   FormattedMessage,
@@ -11,18 +12,21 @@ import {
 import flatten from "flat";
 import { useHistory, useParams } from "react-router-dom";
 import hoodieimg from '../../assets/img/hoodie.png'
+import Product from './Product/Product';
+import config from '../../config/config';
 
 const SearchResult = (props) => {
   const searchKeyword = useParams();
+  
   const history = useHistory();
   const [products, setProducts] = React.useState([]);
-  console.log(props)
+  
   React.useEffect(
     () => {
       var request = require('request');
       var options = {
         'method': 'POST',
-        'url': 'https://little-tags-app.herokuapp.com/product/search',
+        'url': config.apiEndPoint+'/product/search',
         'headers': { 'Content-Type': 'application/json' },
         body: JSON.stringify({"language": props.language})
       };
@@ -60,11 +64,11 @@ const SearchResult = (props) => {
                       <div className="col span-2-of-2">
                         <h4><FormattedMessage id="category.allFilters.brand" /></h4>
                         <div className="brand-box">
-                        <label><input type="checkbox" /> Puma</label>
-                        <label><input type="checkbox" /> Levi's</label>
-                        <label><input type="checkbox" /> Pepe Jeans</label>
-                        <label><input type="checkbox" /> Adidas</label>
-                        <label><input type="checkbox" /> Wrangler</label>
+                        <label><input type="checkbox" /><span></span> Puma</label>
+                        <label><input type="checkbox" /><span></span> Levi's</label>
+                        <label><input type="checkbox" /><span></span> Pepe Jeans</label>
+                        <label><input type="checkbox" /><span></span> Adidas</label>
+                        <label><input type="checkbox" /><span></span> Wrangler</label>
                         </div>
                       </div>
                     </div>
@@ -128,56 +132,9 @@ const SearchResult = (props) => {
                     </div>
                     <div className="item-container">
                     { products.map((product) => 
-                            <div className="row item">
-                            <Link to="/product-details/1"><img src={hoodieimg} className="item-image" /></Link>
-                            <h2>{product.name}</h2>
-                            <div className="item-price">{product.currency}{product.price}</div>
-                            <button className="button-red item-add-to-cart"><FormattedMessage id="category.addtocart" /></button>
-                        </div>
+                            <Product product={product} />
                       ) 
                     }
-                    {/*<div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>
-                    <div className="row item">
-                        <img src={hoodieimg} className="item-image" />
-                        <h2>NIKE Hoodie</h2>
-                        <div className="item-price">₹999</div>
-                        <button className="button-red item-add-to-cart">Add to cart</button>
-                    </div>*/}
                     </div>
                   </div>
                 </div>
