@@ -7,7 +7,7 @@
 
 .banner-text-box {
   position: absolute;
-  top: 20%;
+  top: 15%;
   left: 40px;
 }
 
@@ -133,6 +133,12 @@
   width: 150px;
   margin: -56px -71px;
   position: absolute;
+}
+
+.jogger-img {
+  height: "229px"; 
+  width: "244px"; 
+  margin: "-96px -118px";
 }
 
 .hexagon {
@@ -289,7 +295,24 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
   .mens-category {
-    height: 1060px;
+    height: 1075px;
+  }
+
+  .new-arrival {
+    height: 40vh;
+  }
+
+  .hexagon img {
+    height: 90px;
+    width: 90px;
+    margin: -36px -40px;
+  }
+  
+  .jogger-img
+  {
+    height: 146px !important;
+    margin: -70px -76px !important;
+    width: 150px !important;
   }
 
   .hexagon {
@@ -387,6 +410,31 @@
     height: 580px;
   }
 
+  .new-arrival {
+    height: 20vh;
+  }
+
+  .main-bg {
+    height: 80px;
+  }
+
+  .main-category img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hexagon img
+  {
+    height: 40px;
+    width: 40px;
+    margin: -11px -15px;
+  }
+
+  .jogger-img {
+    height: 80px !important;
+    margin: -35px -75px !important;
+  }
+
   .hexagon {
     width: 121px;
     height: 69.86px;
@@ -480,6 +528,22 @@
 @media only screen and (max-width: 375px) {
   .mens-category {
     height: 510px;
+  }
+
+  .main-category {
+    padding: 16px 0 !important;
+  }
+
+  .hexagon img
+  {
+    height: 30px;
+    width: 30px;
+    margin: -11px -10px;
+  }
+
+  .jogger-img {
+    height: 60px !important;
+    margin: -26px -75px !important;
   }
 
   .hexagon {

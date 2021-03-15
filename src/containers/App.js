@@ -6,6 +6,9 @@ import Footer from "../containers/footer/footer";
 import Login from "../components/Login/Login";
 import Signup from "../components/Signup/Signup";
 import Profile from "../components/Profile/Profile";
+import Shipping from "../components/Shipping/Shipping";
+import Payment from "../components/Payment/Payment";
+import ThankYou from "../components/ThankYou/ThankYou";
 import SearchResult from "../components/SearchResult/SearchResult";
 import { LanguageContext } from "../context/language-context";
 import { CartProvider } from "../context/cart-context";
@@ -56,8 +59,14 @@ const App = (props) => {
           <Route path="/cart">
             <Cart />
           </Route>
-          <Route path="/checkout">
-            <Checkout />
+          <Route path="/shipping">
+            <Shipping />
+          </Route>
+          <Route path="/payment">
+            <Payment />
+          </Route>
+          <Route path="/thankyou">
+            <ThankYou />
           </Route>
           <Route path="*">
             <Error />

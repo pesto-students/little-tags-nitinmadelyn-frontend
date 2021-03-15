@@ -1,8 +1,11 @@
-.form-input {
-  margin: 10px 0;
-  width: 97%;
+.border-box a{
+  color: #c30;
+  float: right;
 }
 
+.bottom-btn {
+  margin: 0px 16px 0 0;
+}
 
 /* Desktops, large screens */
 @media only screen and (max-width: 1200px) {
@@ -15,14 +18,17 @@
 }
 /* iPads, Tablets */
 @media only screen and (max-width: 768px) {
-  .form-input {
-    width: 96%;
-  }
+  
 }
 
 /* Mobile devices */
 @media only screen and (max-width: 480px) {
-  
+  .border-box {
+    width: 89%;
+  }
+  .bottom-btn1 {
+    margin: 0;
+  }
 }
 
 @media only screen and (max-width: 375px) {
@@ -30,5 +36,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-  
+  .border-box {
+    width: 86% !important;
+  }
 }

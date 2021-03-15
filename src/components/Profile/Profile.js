@@ -170,10 +170,10 @@ const Profile = (props) => {
                         <div className="right-container">
                           <div className="address-row">
                             <div className="col span-1-of-4">
-                              <img src={hoodieimg} style={{height: "150px"}} />
+                              <img src={hoodieimg} style={{height: "100%", width:"100%"}} />
                             </div>
                             <div className="col span-2-of-4">
-                              <h4>NIKE HOODIE</h4>
+                              <h3>NIKE HOODIE</h3>
                               <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
                               <p>Ordered On: 20 Feb 2021</p>
                               <p>Delivered On: 22 Feb 2021</p>
@@ -187,10 +187,10 @@ const Profile = (props) => {
                           </div>
                           <div className="address-row">
                             <div className="col span-1-of-4">
-                              <img src={hoodieimg} style={{height: "150px"}} />
+                              <img src={hoodieimg} style={{height: "100%", width:"100%"}} />
                             </div>
                             <div className="col span-2-of-4">
-                              <h4>NIKE HOODIE</h4>
+                              <h3>NIKE HOODIE</h3>
                               <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
                               <p>Ordered On: 20 Feb 2021</p>
                               <p>Delivered On: 22 Feb 2021</p>
@@ -217,8 +217,6 @@ const Profile = (props) => {
                             <div className="col span-2-of-4">
                               <h3>NIKE HOODIE</h3>
                               <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
-                              <p>Ordered On: 20 Feb 2021</p>
-                              <p>Delivered On: 22 Feb 2021</p>
                               <button className="button-red edit-btn margin-right-10px">
                                 Move to cart
                               </button>
@@ -237,8 +235,6 @@ const Profile = (props) => {
                             <div className="col span-2-of-4">
                               <h3>NIKE HOODIE</h3>
                               <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
-                              <p>Ordered On: 20 Feb 2021</p>
-                              <p>Delivered On: 22 Feb 2021</p>
                               <button className="button-red edit-btn margin-right-10px">
                                 Move to cart
                               </button>

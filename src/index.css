@@ -24,6 +24,7 @@ h1 {
   border: 1px solid #fff;
   border-radius: 5px;
   font-size: 100%;
+  cursor: pointer;
 }
 
 .button-red:hover {

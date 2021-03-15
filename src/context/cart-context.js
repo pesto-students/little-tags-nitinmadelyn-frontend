@@ -9,7 +9,7 @@ const initialState = {
     {
       id: 1,
       title: "Men Yellow Printed Round Neck T-Shirt",
-      price: 599.99,
+      price: 599,
       description:
         "Keep this hip this season with the HRX Men's Athleisure T-shirt. This versatile T-shirt can be styled any way you like for the ultimate gym-to-street look.",
       img:
@@ -19,7 +19,7 @@ const initialState = {
     {
       id: 2,
       title: "Men Brown & Black Striped Round Neck T-shirt",
-      price: 699.99,
+      price: 699,
       description:
         "Brown and black striped T-shirt, has a round neck, short sleeves",
       img:
