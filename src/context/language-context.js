@@ -76,7 +76,29 @@ export const languageObj = {
     },
     thankyou: {
       title: "Thank You"
-    }
+    },
+    productDetails: {
+      addToCart: "Add to cart",
+      addToWishList: "Add to wishlist",
+      quantity: "Quantity",
+    },
+    cart: {
+      bagEmpty: "Your bag is empty",
+      backHome: "Back to home",
+      shoppingCart: "Shopping Cart",
+      image: "Image",
+      product: "Product",
+      price: "Price",
+      remove: "Remove",
+      quantity: "Quantity",
+      subTotal: "Subtotal",
+      tax: "Tax",
+      shipping: "Shipping",
+      grandTotal: "Grand Total",
+      checkout: "Checkout",
+      clearCart: "Clear cart",
+      continueShopping: "Continue shopping",
+    },
   },
   es: {
     lang: {
@@ -153,7 +175,29 @@ export const languageObj = {
     },
     thankyou: {
       title: "Thank You"
-    }
+    },
+    productDetails: {
+      addToCart: "Añadir a la cesta",
+      addToWishList: "Añadir a la lista de deseos",
+      quantity: "Cantidad",
+    },
+    cart: {
+      bagEmpty: "Tu bolsa esta vacia",
+      backHome: "De vuelta a casa",
+      shoppingCart: "Carrito de compras",
+      image: "Imagen",
+      product: "Producto",
+      price: "Precio",
+      remove: "Eliminar",
+      quantity: "Cantidad",
+      subTotal: "Total parcial",
+      tax: "Impuesto",
+      shipping: "Transporte",
+      grandTotal: "Gran total",
+      checkout: "Revisa",
+      clearCart: "Vaciar carrito",
+      continueShopping: "Seguir comprando",
+    },
   },
 };
 
