@@ -17,6 +17,7 @@ import Home from "../components/Home";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
 import Error from "../components/error";
 import Cart from "../components/Cart/Cart";
+import Checkout from "../components/Checkout/Checkout";
 
 const App = (props) => {
   const [language, setLanguage] = React.useState("en");
