@@ -69,6 +69,9 @@ export const languageObj = {
       },
       result: "Results for `{name}`",
       addtocart: "Add to cart"
+    },
+    thankyou: {
+      title: "Thank You"
     }
   },
   es: {

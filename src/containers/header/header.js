@@ -25,10 +25,12 @@ import {
 } from "react-intl";
 import flatten from 'flat';
 import { useHistory, useParams } from "react-router-dom";
+import { useGlobalContext } from "../../context/cart-context";
 
 const Header = (props) => {
   const searchKeyword = useParams();
   const history = useHistory();
+  const { amount } = useGlobalContext();
   
   const [isSearchboxOpen, setIsSearchboxOpen] = React.useState(searchKeyword.text);
   const [isSearchIcon, setIsSearchIcon] = React.useState(!searchKeyword.text);
@@ -165,6 +167,7 @@ const Header = (props) => {
                   </Link>
                 </li>
                 <li>
+                <Link to="/cart">
                   <CartOutline
                     color={"#fff"}
                     title={"Search"}
@@ -172,6 +175,8 @@ const Header = (props) => {
                     width="30px"
                     className="icon"
                   />
+                  <span className="item-count">{amount}</span>
+                  </Link>
                 </li>
                 <li>
                   <GlobeOutline

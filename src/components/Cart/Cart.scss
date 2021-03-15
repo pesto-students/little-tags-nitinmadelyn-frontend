@@ -183,6 +183,7 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   font-size: 25px;
   border: 1px solid #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .checkout:hover {
@@ -198,6 +199,7 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   font-size: 25px;
   border: 1px solid #fff;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .cart-clear:hover {
@@ -211,7 +213,7 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
     padding-top: 20px;
     border-top: 1px solid $color-border;
   }
-
+  
   .column-labels {
     display: none;
   }
@@ -249,6 +251,13 @@ $font-bold: "HelveticaNeue-Medium", "Helvetica Neue Medium";
   .product-line-price {
     float: right;
     width: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .checkout, .cart-clear {
+    width: 100%;
+    margin-left: 0 !important;
   }
 }
 

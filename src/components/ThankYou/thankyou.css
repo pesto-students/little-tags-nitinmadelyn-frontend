@@ -1,0 +1,13 @@
+.login-container {
+  min-height: 80vh;
+}
+.border-box {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  text-align: left;
+  padding: 20px;
+  margin-bottom: 10px;
+  width: 90%;
+}

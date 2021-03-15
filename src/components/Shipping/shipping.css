@@ -1,0 +1,135 @@
+.tab-nav {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tab-nav li{
+  padding: 10px 25px;
+  float: left;
+  width: 23%;
+}
+
+.tab-nav .active {
+  background-color: #fff;
+  color: #000;
+}
+
+.tab-nav li span {
+  border: 1px solid #fff;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.tab-nav li p{
+  margin-top: 20px;
+}
+
+.shipping-input-full {
+  width: 95.5% !important;
+  left: 3px;
+  margin: 10px 0 !important;
+}
+
+.shipping-input-small {
+  width: 45% !important;
+  display: block;
+  float: left;
+  margin: 10px 4px !important;
+}
+
+.margin-top-0 {
+  margin-top: 0 !important;
+}
+
+.float-right {
+  float: right;
+  padding: 10px;
+}
+
+.float-left {
+  float: left;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #fff;
+  padding: 15px 0;
+}
+
+.back-link:hover {
+  border-bottom: 1px solid #c30;
+  padding-bottom: 5px;
+}
+
+.bottom-btn {
+  margin: 0 4px;
+}
+
+/* Desktops, large screens */
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* Small screens, laptops */
+@media only screen and (max-width: 1024px) {
+  
+}
+/* iPads, Tablets */
+@media only screen and (max-width: 768px) {
+  .tab-nav li{
+    width: 15%;
+  }
+  .shipping-input-small {
+    width: 44% !important;
+  }
+  .shipping-input-full {
+    width: 93.5% !important;
+  }
+  .bottom-btn {
+    margin: 0 9px;
+  }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 480px) {
+  .login-box {
+    padding: 30px 10px;
+  }
+  .tab-nav li{
+    width: 19%;
+  }
+  .shipping-input-small {
+    width: 45% !important;
+  }
+  .shipping-input-full {
+    width: 95% !important;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .tab-nav li{
+    width: 17%;
+  }
+  .shipping-input-small {
+    width: 44% !important;
+  }
+  .shipping-input-full {
+    width: 93.5% !important;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .tab-nav li{
+    width: 14%;
+  }
+  .shipping-input-small {
+    width: 44% !important;
+  }
+  .shipping-input-full {
+    width: 94.5% !important;
+  }
+}

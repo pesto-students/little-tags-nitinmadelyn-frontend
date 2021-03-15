@@ -16,12 +16,13 @@ const Cart = () => {
             justifyContent: "center",
             alignItems: "center",
             height: "49.8vh",
+            minHeight: "80vh"
           }}
         >
           <h2>Your bag is empty</h2>
 
-          <Link to="/" className="button-red" style={{ marginLeft: "2vw" }}>
-            Back to home
+          <Link to="/" style={{ marginLeft: "2vw" }}>
+            <button className="button-red">Back to home</button>
           </Link>
         </div>
       </main>
@@ -58,7 +59,7 @@ const Cart = () => {
           <div className="totals-item">
             <label>Subtotal</label>
             <div className="totals-value" id="cart-subtotal">
-              ₹ 71.00
+              ₹ 1298.00
             </div>
           </div>
           <div className="totals-item">
@@ -81,9 +82,12 @@ const Cart = () => {
           </div>
         </div>
 
+        <Link to="/shipping">
         <button className="checkout">Checkout</button>
-        <Link to="/" className="cart-clear" onClick={clearCart}>
-          Continue shopping
+        </Link>
+
+        <Link to="/search/hoodie">
+        <button className="button-red cart-clear">Continue shopping</button>
         </Link>
         <button
           className="cart-clear"
