@@ -2,6 +2,10 @@ import React from 'react';
 
 export const languageObj = {
   en: {
+    lang: {
+      en: "English",
+      es: "Spanish"
+    },
     footer: {
       legal: '© 2021, KLOTHS PVT LTD. ALL RIGHTS RESERVED.',
       credits: "Made with love by <a href='https://github.com/nitinmadelyn' target='_blank'>@nitin</a> & <a href='https://github.com/shubhadeep29' target='_blank'>@shubhdeep</a>",
@@ -75,6 +79,10 @@ export const languageObj = {
     }
   },
   es: {
+    lang: {
+      en: "Inglesa",
+      es: "Española"
+    },
     footer: {
       legal: '© 2021, KLOTHS PVT LTD. RESERVADOS TODOS LOS DERECHOS.',
       credits: "Made with love by <a href='https://github.com/nitinmadelyn' target='_blank'>@nitin</a> & <a href='https://github.com/shubhadeep29' target='_blank'>@shubhdeep</a>",
@@ -142,6 +150,9 @@ export const languageObj = {
       },
       result: "resultados para `{name}`",
       addtocart: "Añadir a la cesta"
+    },
+    thankyou: {
+      title: "Thank You"
     }
   },
 };

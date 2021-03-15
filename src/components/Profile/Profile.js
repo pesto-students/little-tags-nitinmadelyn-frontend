@@ -170,7 +170,7 @@ const Profile = (props) => {
                         <div className="right-container">
                           <div className="address-row">
                             <div className="col span-1-of-4">
-                              <img src={hoodieimg} style={{height: "100%", width:"100%"}} />
+                              <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg" style={{height: "100%", width:"100%"}} />
                             </div>
                             <div className="col span-2-of-4">
                               <h3>NIKE HOODIE</h3>
@@ -181,13 +181,13 @@ const Profile = (props) => {
                                 Buy It Again
                               </button>
                             </div>
-                            <div className="col span-1-of-4 float-right">
+                            <div className="col span-1-of-4 float-right" style={{padding:"0"}}>
                               <p>₹999</p>
                             </div>
                           </div>
                           <div className="address-row">
                             <div className="col span-1-of-4">
-                              <img src={hoodieimg} style={{height: "100%", width:"100%"}} />
+                              <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg" style={{height: "100%", width:"100%"}} />
                             </div>
                             <div className="col span-2-of-4">
                               <h3>NIKE HOODIE</h3>
@@ -198,7 +198,7 @@ const Profile = (props) => {
                                 Buy It Again
                               </button>
                             </div>
-                            <div className="col span-1-of-4 float-right">
+                            <div className="col span-1-of-4 float-right" style={{padding:"0"}}>
                               <p>₹999</p>
                             </div>
                           </div>
@@ -224,7 +224,7 @@ const Profile = (props) => {
                                 Delete
                               </button>
                             </div>
-                            <div className="col span-1-of-4 float-right">
+                            <div className="col span-1-of-4 float-right" style={{padding:"0"}}>
                               <p>₹999</p>
                             </div>
                           </div>
@@ -242,7 +242,7 @@ const Profile = (props) => {
                                 Delete
                               </button>
                             </div>
-                            <div className="col span-1-of-4 float-right">
+                            <div className="col span-1-of-4 float-right" style={{padding:"0"}}>
                               <p>₹999</p>
                             </div>
                           </div>

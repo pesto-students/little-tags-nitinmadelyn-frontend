@@ -21,12 +21,13 @@ import Cart from "../components/Cart/Cart";
 const App = (props) => {
   const [language, setLanguage] = React.useState("en");
   const handleChangeLanguage = (element) => {
-    setLanguage(element.target.innerHTML.toLowerCase());
     element.target.classList.add("selected");
-    if (element.target.innerHTML === "en") {
+    if (element.target.innerHTML.trim() === "English" || element.target.innerHTML.trim() === "Inglesa") {
       element.target.nextSibling.classList.remove("selected");
+      setLanguage('en');
     } else {
       element.target.previousSibling.classList.remove("selected");
+      setLanguage('es');
     }
   };
 
@@ -48,10 +49,8 @@ const App = (props) => {
             <SearchResult language={language} />
           </Route>
           <Route path="/profile/:tabName?" component={(Profile)}>
-          <Header handleChangeLanguage={handleChangeLanguage} />
           <Profile />
-          <Footer />
-        </Route>
+          </Route>
           <Route path="/product-details/:proId">
             <ProductDetails />
           </Route>

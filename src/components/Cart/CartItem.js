@@ -2,12 +2,13 @@ import React from "react";
 import { useGlobalContext } from "../../context/cart-context";
 import { FaPlus, FaMinus, FaTrash } from "react-icons/fa";
 
-const CartItem = ({ id, img, title, price, amount, description }) => {
+const CartItem = ({ id, image, title, price, amount, description }) => {
+  price = parseFloat(price);
   const { remove, increase, decrease, toggleAmount } = useGlobalContext();
   return (
     <div className="product">
       <div className="product-image">
-        <img src={img} alt={title} />
+        <img src={image} alt={title} />
       </div>
       <div className="product-details">
         <div className="product-title">{title}</div>

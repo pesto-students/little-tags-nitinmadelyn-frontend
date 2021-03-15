@@ -1,6 +1,7 @@
 const reducer = (state, action) => {
   if (action.type === "ADD_TO_CART") {
-    const { id, title, price, description, img, amount } = action.payload;
+    console.log(action.payload)
+    const { id, name, price, description, image, amount } = action.payload;
     const tempItem = state.cart.find((i) => i.id === id);
     if (tempItem) {
       const tempCart = state.cart.map((cartItem) => {
@@ -18,9 +19,9 @@ const reducer = (state, action) => {
     } else {
       const newItem = {
         id: id,
-        title: title,
+        name: name,
         amount,
-        img: img,
+        image: image,
         price,
         description,
       };
