@@ -200,7 +200,7 @@ const Header = (props) => {
                             }
                             onClick={props.handleChangeLanguage}
                           >
-                            EN
+                            <FormattedMessage id="lang.en" />
                           </span>
                           <span
                             className={
@@ -208,7 +208,7 @@ const Header = (props) => {
                             }
                             onClick={props.handleChangeLanguage}
                           >
-                            ES
+                            <FormattedMessage id="lang.es" />
                           </span>
                         </div>
                       )}
