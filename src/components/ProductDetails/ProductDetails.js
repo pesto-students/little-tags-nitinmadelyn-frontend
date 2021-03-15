@@ -147,13 +147,13 @@ const ProductDetails = () => {
                           )
                         }
                       >
-                        Add to cart
+                        {<FormattedMessage id="productDetails.addToCart" />}
                       </Link>
                       <button
                         className="button-red"
                         style={{ marginTop: "5vh", marginLeft: "2vw" }}
                       >
-                        Add to wishlist
+                        {<FormattedMessage id="productDetails.addToWishList" />}
                       </button>
                     </div>
                   </div>
