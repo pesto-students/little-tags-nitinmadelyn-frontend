@@ -1,6 +1,6 @@
-import React, { useState, useContext, useReducer, useEffect } from "react";
-import reducer from "../reducers/cart-reducers";
-const url = "";
+import React, { useState, useContext, useReducer, useEffect } from 'react';
+import reducer from '../reducers/cart-reducers';
+const url = '';
 const CartContext = React.createContext();
 
 const initialState = {
@@ -27,7 +27,7 @@ const initialState = {
     //  amount: 1,
     //},
   ],
-  total: 90,
+  total: 0,
   amount: 0,
 };
 
@@ -35,21 +35,21 @@ const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const addToCart = (id, name, price, description, image, amount) => {
     dispatch({
-      type: "ADD_TO_CART",
+      type: 'ADD_TO_CART',
       payload: { id, name, price, description, image, amount },
     });
   };
   const clearCart = () => {
-    dispatch({ type: "CLEAR_CART" });
+    dispatch({ type: 'CLEAR_CART' });
   };
   const remove = (id) => {
-    dispatch({ type: "REMOVE", payload: id });
+    dispatch({ type: 'REMOVE', payload: id });
   };
   const increase = (id) => {
-    dispatch({ type: "INCREASE", payload: id });
+    dispatch({ type: 'INCREASE', payload: id });
   };
   const decrease = (id) => {
-    dispatch({ type: "DECREASE", payload: id });
+    dispatch({ type: 'DECREASE', payload: id });
   };
   //   const fetchData = async () => {
   //     dispatch({ type: "LOADING" });
@@ -58,14 +58,14 @@ const CartProvider = ({ children }) => {
   //     dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   //   };
   const toggleAmount = (id, type) => {
-    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
+    dispatch({ type: 'TOGGLE_AMOUNT', payload: { id, type } });
   };
   //   useEffect(() => {
   //     fetchData();
   //   }, []);
 
   useEffect(() => {
-    dispatch({ type: "GET_TOTALS" });
+    dispatch({ type: 'GET_TOTALS' });
   }, [state.cart]);
   return (
     <CartContext.Provider
