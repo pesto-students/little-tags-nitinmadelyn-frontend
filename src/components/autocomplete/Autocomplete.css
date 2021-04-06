@@ -1,0 +1,10 @@
+.list .list-item {
+  position: absolute;
+  border: 1px solid white;
+  padding: 10px;
+  margin: 6px -195px;
+  background: black;
+  border-radius: 5px;
+  width: 170px;
+  font-size: 14px;
+}
