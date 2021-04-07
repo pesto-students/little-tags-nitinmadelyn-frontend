@@ -82,6 +82,9 @@ export const languageObj = {
       addToCart: 'Add to cart',
       addToWishList: 'Add to wishlist',
       quantity: 'Quantity',
+      backHome: 'Back to home',
+      loading: 'Loading...',
+      noProductFound: 'No product found',
     },
     cart: {
       bagEmpty: 'Your bag is empty',
@@ -182,6 +185,9 @@ export const languageObj = {
       addToCart: 'Añadir a la cesta',
       addToWishList: 'Añadir a la lista de deseos',
       quantity: 'Cantidad',
+      backHome: 'De vuelta a casa',
+      loading: 'Cargando...',
+      noProductFound: 'No se ha encontrado ningún producto',
     },
     cart: {
       bagEmpty: 'Tu bolsa esta vacia',

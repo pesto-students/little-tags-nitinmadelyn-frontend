@@ -16,9 +16,6 @@ const Autocomplete = ({ toggleSearch }) => {
 
   const debouncedHandleChange = _debounce(handleChange, 500);
 
-  const rootUrl =
-    'http://ec2-13-127-218-228.ap-south-1.compute.amazonaws.com:3000';
-
   useEffect(() => {
     if (userInput) {
       filterData();
@@ -29,34 +26,15 @@ const Autocomplete = ({ toggleSearch }) => {
 
   const filterData = async () => {
     setIsLoading(true);
-
-    // const response = await axios(
-    //   `${rootUrl}/product/${userInput}`
-    // ).catch((error) => console.log(error));
-
     const response = await axios
-      .post(`${rootUrl}/product/search`, {
-        filters: [
-          {
-            key: 'price',
-            value: [0, 1000],
-          },
-          {
-            key: 'name',
-            value: userInput,
-          },
-        ],
-        language: 'en',
-      })
+      .get(`${process.env.REACT_APP_API_URL}/product/search/${userInput}`)
       .catch((error) => console.log(error));
 
     if (response) {
-      setProductList(response.data.items);
-      console.log('productList', productList);
+      setProductList(response.data.items.product);
       setIsLoading(false);
     }
   };
-
   return (
     <div className='wrapper'>
       <div className={`control ${!!isLoading ? 'is-loading' : ''}`}>
@@ -70,10 +48,10 @@ const Autocomplete = ({ toggleSearch }) => {
         {productList.map((product, index) => {
           return (
             <Link
-              to={`/product-details/${product.name}`}
+              to={`/product-details/${product.id}`}
               className='list-item'
               style={{ color: 'white' }}
-              key={index}
+              key={product.id}
               onClick={() => {
                 document.getElementsByClassName('search-box-input')[0].value =
                   '';
