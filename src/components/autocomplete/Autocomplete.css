@@ -1,0 +1,21 @@
+.list {
+  position: absolute;
+  padding: 10px;
+  margin: 6px -14.5vw;
+  /* background: black;
+  border-radius: 5px; */
+  width: 13vw;
+  display: block;
+}
+
+.list .list-item {
+  /* position: absolute; */
+  border-bottom: 1px solid white;
+  padding: 10px;
+  margin: -7px -7px 7px -7px;
+  background: black;
+  border-radius: 5px;
+  width: 12.5vw;
+  font-size: 12px;
+  display: block;
+}
