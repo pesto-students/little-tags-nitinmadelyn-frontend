@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import './Autocomplete.css';
 import _debounce from 'lodash-es/debounce';
 import { Link } from 'react-router-dom';
+import config from '../../config/config'
 
 import axios from 'axios';
 
@@ -27,7 +28,7 @@ const Autocomplete = ({ toggleSearch }) => {
   const filterData = async () => {
     setIsLoading(true);
     const response = await axios
-      .get(`${process.env.REACT_APP_API_URL}/product/search/${userInput}`)
+      .get(`${config.apiEndPoint}/product/search/${userInput}`)
       .catch((error) => console.log(error));
 
     if (response) {

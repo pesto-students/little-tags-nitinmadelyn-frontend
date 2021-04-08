@@ -20,6 +20,7 @@ import DetailsThumb from './DetailsThumb';
 import AmountButtons from './AmountButtons';
 import ProductImages from './ProductImages';
 import axios from 'axios';
+import config from '../../config/config'
 
 const ProductDetails = () => {
   const { proId } = useParams();
@@ -54,7 +55,7 @@ const ProductDetails = () => {
     setLoading(true);
     async function getProduct() {
       const response = await axios
-        .get(`${process.env.REACT_APP_API_URL}/product/${proId}`)
+        .get(`${config.apiEndPoint}/product/${proId}`)
         .catch((error) => console.log(error));
 
       if (response) {

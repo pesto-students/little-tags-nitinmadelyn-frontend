@@ -5,7 +5,7 @@ if(window.location.hostname === 'localhost'){
   }
 } else {
   config = {
-    apiEndPoint: "https://little-tags-app.herokuapp.com"
+    apiEndPoint: "https://mt6bjbo9yi.execute-api.ap-south-1.amazonaws.com/v1"
   }
 }
 
