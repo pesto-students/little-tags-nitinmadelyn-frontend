@@ -51,7 +51,6 @@ const SearchResult = (props) => {
         .catch((error) => console.log(error));
 
       if (response) {
-        console.log('response', response);
         setProducts(response.data.items);
         setLoading(false);
       }
@@ -60,7 +59,6 @@ const SearchResult = (props) => {
   }, [searchKeyword.text]);
 
   const loadingMessage = () => {
-    console.log(loading);
     return (
       <>
         <br />

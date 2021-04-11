@@ -20,8 +20,8 @@ import { userLogin, authenticate, isAuthenticated } from '../../auth/helper';
 const Login = (props) => {
   const history = useHistory();
   const [values, setValues] = useState({
-    email: 'nitin.madelyn@gmail.com',
-    password: 'Ilovepesto',
+    email: '',
+    password: '',
     error: '',
     success: '',
     loading: false,

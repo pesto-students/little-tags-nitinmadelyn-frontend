@@ -48,7 +48,6 @@ const Signup = (props) => {
     setValues({ ...values, error: false });
     userSignup({ firstName, lastName, email, password, mobile, otp })
       .then((data) => {
-        console.log('data', data);
         if (data.status === 'success') {
           setValues({
             ...values,
@@ -70,24 +69,30 @@ const Signup = (props) => {
 
   const successMessage = () => {
     return (
-      <div
-        className='alert alert-success test-center'
-        style={{ display: success ? '' : 'none' }}
-      >
-        New user created Successfully. Please
-        <Link to='/login'>Login here</Link>
-      </div>
+      <>
+        <br />
+        <div
+          className='alert alert-success test-center'
+          style={{ display: success ? '' : 'none' }}
+        >
+          New user created Successfully. Please
+          <Link to='/login'> Login here</Link>
+        </div>
+      </>
     );
   };
 
   const errorMessage = () => {
     return (
-      <div
-        className='alert alert-danger test-center'
-        style={{ display: error ? '' : 'none' }}
-      >
-        {error}
-      </div>
+      <>
+        <br />
+        <div
+          className='alert alert-danger test-center'
+          style={{ display: error ? '' : 'none' }}
+        >
+          {error}
+        </div>
+      </>
     );
   };
 
@@ -106,7 +111,6 @@ const Signup = (props) => {
                     <FormattedMessage id='signup.title' />
                   </h1>
                   <hr />
-                  <br />
                   {successMessage()}
                   {errorMessage()}
                   <FormattedMessage id='signup.placeholder.firstName'>
@@ -221,9 +225,6 @@ const Signup = (props) => {
                       </FacebookLoginButton>
                     </div>
                   </div>
-                  <p className='text-white text-center'>
-                    {JSON.stringify(values)}
-                  </p>
                 </form>
               </div>
             </section>
