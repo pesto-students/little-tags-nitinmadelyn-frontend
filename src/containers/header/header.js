@@ -27,6 +27,7 @@ import {
 import flatten from 'flat';
 import { useHistory, useParams } from 'react-router-dom';
 import { useGlobalContext } from '../../context/cart-context';
+import { isAuthenticated } from '../../auth/helper';
 
 const Header = (props) => {
   const searchKeyword = useParams();
@@ -188,22 +189,37 @@ const Header = (props) => {
                     {isSearchboxOpen ? searchBox : null}
                     {searchBoxIcon}
                   </li>
-                  <li>
-                    <Link to='/login'>
-                      <PersonOutline
-                        color={'#fff'}
-                        title={'Search'}
-                        height='30px'
-                        width='30px'
-                        className='icon'
-                      />
-                    </Link>
-                  </li>
+                  {!isAuthenticated() && (
+                    <li>
+                      <Link to='/login'>
+                        <PersonOutline
+                          color={'#fff'}
+                          title={'login'}
+                          height='30px'
+                          width='30px'
+                          className='icon'
+                        />
+                      </Link>
+                    </li>
+                  )}
+                  {isAuthenticated() && (
+                    <li>
+                      <Link to='/profile/profile'>
+                        <PersonOutline
+                          color={'#fff'}
+                          title={'profile'}
+                          height='30px'
+                          width='30px'
+                          className='icon'
+                        />
+                      </Link>
+                    </li>
+                  )}
                   <li>
                     <Link to='/cart'>
                       <CartOutline
                         color={'#fff'}
-                        title={'Search'}
+                        title={'cart'}
                         height='30px'
                         width='30px'
                         className='icon'
@@ -214,7 +230,7 @@ const Header = (props) => {
                   <li>
                     <GlobeOutline
                       color={'#fff'}
-                      title={'Search'}
+                      title={'change language'}
                       height='30px'
                       width='30px'
                       className='icon'

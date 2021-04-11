@@ -20,7 +20,7 @@ import DetailsThumb from './DetailsThumb';
 import AmountButtons from './AmountButtons';
 import ProductImages from './ProductImages';
 import axios from 'axios';
-import config from '../../config/config'
+import config from '../../config/config';
 
 const ProductDetails = () => {
   const { proId } = useParams();
@@ -98,21 +98,6 @@ const ProductDetails = () => {
   const { addToCart } = useGlobalContext();
   const [index, setIndex] = useState(0);
   const [amount, setAmount] = useState(1);
-
-  // useEffect(() => {
-  //   myRef.current.children[index].className = 'active';
-  // }, []);
-
-  // const myRef = React.createRef();
-
-  // const handleTab = (index) => () => {
-  //   setIndex(index);
-  //   const images = myRef.current.children;
-  //   for (let i = 0; i < images.length; i++) {
-  //     images[i].className = images[i].className.replace('active', '');
-  //   }
-  //   images[index].className = 'active';
-  // };
 
   const increase = () => {
     setAmount((oldAmount) => {
@@ -208,12 +193,6 @@ const ProductDetails = () => {
                   <div className='details' key={item.id}>
                     <div className='big-img'>
                       <ProductImages images={item.src} />
-                      {/* <img src={item.src[index]} alt='' /> */}
-                      {/* <DetailsThumb
-                        images={item.src}
-                        tab={handleTab}
-                        myRef={myRef}
-                      /> */}
                     </div>
 
                     <div className='box'>

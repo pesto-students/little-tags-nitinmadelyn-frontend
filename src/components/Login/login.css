@@ -36,7 +36,7 @@
   font-size: 80%;
 }
 
-.login-btn{
+.login-btn {
   float: left;
   padding: 10px 20px;
 }
@@ -63,22 +63,40 @@
   width: auto !important;
 }
 
-.left-align{
+.left-align {
   text-align: left;
+}
+
+.alert-success {
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 5px;
+  background: #494;
+}
+
+.alert-info {
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 5px;
+  background: rgb(68, 102, 153);
+}
+
+.alert-danger {
+  border: 1px solid white;
+  padding: 6px;
+  border-radius: 5px;
+  background: hsl(15deg 100% 40%);
 }
 
 /* Desktops, large screens */
 @media only screen and (max-width: 1200px) {
-  
 }
 
 /* Small screens, laptops */
 @media only screen and (max-width: 1024px) {
-  
 }
 /* iPads, Tablets */
 @media only screen and (max-width: 768px) {
-  
 }
 
 /* Mobile devices */
@@ -93,30 +111,28 @@
     margin: 5px auto !important;
     width: 100% !important;
   }
-  .login-btn{
+  .login-btn {
     margin: 5px auto !important;
     width: 100%;
   }
-  .login-box input{
+  .login-box input {
     padding: 4px;
   }
-  .mobile span{
+  .mobile span {
     top: 18px !important;
   }
-  .signup-link{
+  .signup-link {
     float: none !important;
     top: 10px;
     position: relative;
   }
-  .margin-top-40{
+  .margin-top-40 {
     margin-top: 40px;
   }
 }
 
 @media only screen and (max-width: 375px) {
-  
 }
 
 @media only screen and (max-width: 320px) {
-  
 }

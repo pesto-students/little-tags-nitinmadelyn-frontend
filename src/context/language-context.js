@@ -39,6 +39,8 @@ export const languageObj = {
       placeholder: {
         mobile: 'Mobile Number',
         sendOTP: 'Send OTP',
+        email: 'Email',
+        password: 'Password',
         OTP: 'OTP',
       },
       signupLink: 'New User? Signup Here',
@@ -54,6 +56,7 @@ export const languageObj = {
         firstName: 'First Name',
         lastName: 'Last Name',
         email: 'Email',
+        password: 'Password',
         mobile: 'Mobile Number',
         sendOTP: 'Send OTP',
         OTP: 'OTP',
@@ -141,6 +144,8 @@ export const languageObj = {
       or: 'O',
       placeholder: {
         mobile: 'Número de teléfono móvil',
+        email: 'Correo electrónico',
+        password: 'Contraseña',
         sendOTP: 'Enviar OTP',
         OTP: 'OTP',
       },
@@ -157,6 +162,7 @@ export const languageObj = {
         firstName: 'Nombre de pila',
         lastName: 'Apellido',
         email: 'Correo electrónico',
+        password: 'Contraseña',
         mobile: 'Número de teléfono móvil',
         sendOTP: 'Enviar OTP',
         OTP: 'OTP',
