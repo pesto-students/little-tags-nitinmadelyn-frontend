@@ -70,7 +70,6 @@ const Signup = (props) => {
   const successMessage = () => {
     return (
       <>
-        <br />
         <div
           className='alert alert-success test-center'
           style={{ display: success ? '' : 'none' }}
@@ -85,7 +84,6 @@ const Signup = (props) => {
   const errorMessage = () => {
     return (
       <>
-        <br />
         <div
           className='alert alert-danger test-center'
           style={{ display: error ? '' : 'none' }}

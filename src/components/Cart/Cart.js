@@ -11,6 +11,7 @@ import {
   FromattedHTMLMessage,
 } from 'react-intl';
 import flatten from 'flat';
+import { isAuthenticated } from '../../auth/helper';
 
 const Cart = () => {
   const { cart, total, clearCart } = useGlobalContext();
@@ -113,11 +114,20 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <Link to='/shipping'>
-                <button className='checkout'>
-                  {<FormattedMessage id='cart.checkout' />}
-                </button>
-              </Link>
+              {isAuthenticated() && (
+                <Link to='/shipping'>
+                  <button className='checkout'>
+                    {<FormattedMessage id='cart.checkout' />}
+                  </button>
+                </Link>
+              )}
+              {!isAuthenticated() && (
+                <Link to='/login'>
+                  <button className='checkout'>
+                    {<FormattedMessage id='login.title' />}
+                  </button>
+                </Link>
+              )}
               <Link to='/' className='cart-clear' onClick={clearCart}>
                 {<FormattedMessage id='cart.continueShopping' />}
               </Link>

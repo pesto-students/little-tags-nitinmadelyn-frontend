@@ -84,6 +84,7 @@ export const languageObj = {
     productDetails: {
       addToCart: 'Add to cart',
       addToWishList: 'Add to wishlist',
+      wishListed: 'Added to Wishlist',
       quantity: 'Quantity',
       backHome: 'Back to home',
       loading: 'Loading...',
@@ -190,6 +191,7 @@ export const languageObj = {
     productDetails: {
       addToCart: 'Añadir a la cesta',
       addToWishList: 'Añadir a la lista de deseos',
+      wishListed: 'Añadida a la lista de deseos',
       quantity: 'Cantidad',
       backHome: 'De vuelta a casa',
       loading: 'Cargando...',

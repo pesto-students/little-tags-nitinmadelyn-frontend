@@ -107,7 +107,7 @@ const SearchResult = (props) => {
   //   },
   //   [props.language]
   // );
-  console.log('products', products);
+
   return (
     <LanguageContext.Consumer>
       {(language) => (
@@ -229,7 +229,7 @@ const SearchResult = (props) => {
                       {loadingMessage()}
                       {noProduct()}
                       {products.map((product) => (
-                        <Product product={product} />
+                        <Product key={product.id} product={product} />
                       ))}
                     </div>
                   </div>

@@ -15,7 +15,6 @@ import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../../../context/cart-context';
 
 const Product = (props) => {
-  console.log('props', props);
   const {
     remove,
     increase,
@@ -26,7 +25,6 @@ const Product = (props) => {
   const [heart, setHeart] = React.useState(true);
   const handleWishlist = (event) => {
     setHeart(!heart);
-    console.log(event.target);
   };
 
   return (
@@ -60,7 +58,7 @@ const Product = (props) => {
                 />
               )}
             </span>
-            <Link to='/product-details/1'>
+            <Link to={`/product-details/${props.product.id}`}>
               <img src={props.product.images} className='item-image' />
             </Link>
             <h2>{props.product.name}</h2>
@@ -76,8 +74,8 @@ const Product = (props) => {
                   props.product.name,
                   props.product.price,
                   props.product.description,
-                  props.product.image,
-                  props.product.amount
+                  props.product.images,
+                  1
                 )
               }
             >

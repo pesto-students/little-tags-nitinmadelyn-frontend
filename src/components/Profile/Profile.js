@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import maincss from '../../assets/css/main.css';
 import profilecss from './profile.css';
 import { Link, useHistory, useParams } from 'react-router-dom';
@@ -19,21 +19,152 @@ import {
 } from 'react-ionicons';
 import { Input } from '../Form/Form';
 import hoodieimg from '../../assets/img/hoodie.png';
-import { userLogout, isAuthenticated } from '../../auth/helper';
+import {
+  userLogout,
+  isAuthenticated,
+  authenticate,
+  userProfile,
+  userProfileUpdate,
+  wishlist,
+} from '../../auth/helper';
+import { useGlobalContext } from '../../context/cart-context';
 
 const Profile = (props) => {
   const { tabName } = useParams();
   const history = useHistory();
+  const { addToCart } = useGlobalContext();
   const [cookies, setCookie] = useCookies(['Kloths']);
+  const [address, setAddress] = useState([]);
+  const [wishlistData, setWishlistData] = useState([]);
+
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    mobile: '',
+    error: '',
+    loading: false,
+    success: '',
+  });
+
+  useEffect(() => {
+    //setLoading(true);
+    async function getUserDetails() {
+      const response = await userProfile();
+
+      if (response) {
+        if (response.status === 'success') {
+          setValues({
+            ...values,
+            error: false,
+            loading: false,
+            firstName: response.items.firstName,
+            lastName: response.items.lastName,
+            email: response.items.email,
+            mobile: response.items.mobile,
+          });
+        } else {
+          setValues({ ...values, error: response.message, loading: false });
+        }
+      }
+    }
+    getUserDetails();
+
+    async function getWishlist() {
+      const response = await wishlist();
+
+      if (response) {
+        if (response.status === 'success') {
+          setWishlistData(response.items);
+        }
+      }
+    }
+    getWishlist();
+  }, []);
+
+  const {
+    firstName,
+    lastName,
+    email,
+    mobile,
+    error,
+    success,
+    loading,
+  } = values;
+
+  const handleChange = (name) => (event) => {
+    setValues({ ...values, error: false, [name]: event.target.value });
+  };
 
   const addAddress = () => {
     history.push('/profile/address');
   };
 
+  const loadingMessage = () => {
+    return (
+      <div
+        className='alert alert-info test-center'
+        style={{ display: loading ? '' : 'none' }}
+      >
+        Loading...
+        <br />
+      </div>
+    );
+  };
+
+  const errorMessage = () => {
+    return (
+      <div
+        className='alert alert-danger test-center'
+        style={{ display: error ? '' : 'none' }}
+      >
+        {error}
+        <br />
+      </div>
+    );
+  };
+
+  const successMessage = () => {
+    return (
+      <div
+        className='alert alert-success test-center'
+        style={{ display: success ? '' : 'none' }}
+      >
+        Operation Successful
+        <br />
+      </div>
+    );
+  };
+
+  const onProfileSubmit = (event) => {
+    event.preventDefault();
+    setValues({ ...values, error: false, loading: true });
+    userProfileUpdate({ firstName, lastName, email, mobile })
+      .then((data) => {
+        if (data.status === 'success') {
+          authenticate(data, () => {
+            setValues({
+              ...values,
+              success: true,
+              loading: false,
+            });
+          });
+          setTimeout(() => {
+            setValues({
+              ...values,
+              success: false,
+            });
+          }, 5000);
+        } else {
+          setValues({ ...values, error: data.message, loading: false });
+        }
+      })
+      .catch(console.log('error in profile update'));
+  };
+
   // const handleLogout = () => {
   //   setCookie('username', '', { path: '/' });
   // };
-
   return (
     <LanguageContext.Consumer>
       {(language) => (
@@ -122,15 +253,50 @@ const Profile = (props) => {
                           <h3>Edit Profile</h3>
                           <hr />
                           <br />
-                          <div className='right-container'>
-                            <Input type='text' placeholder='First Name' />
-                            <Input type='text' placeholder='Last Name' />
-                            <Input type='text' placeholder='Email' />
-                            <Input type='text' placeholder='Mobile Number' />
-                            <button className='button-red edit-btn'>
-                              EDIT
-                            </button>
-                          </div>
+
+                          <form>
+                            <div className='right-container'>
+                              {loadingMessage()}
+                              {errorMessage()}
+                              {successMessage()}
+                              <Input
+                                type='text'
+                                name='firstName'
+                                value={firstName}
+                                onChange={handleChange('firstName')}
+                                placeholder='First Name'
+                              />
+                              <Input
+                                type='text'
+                                name='lastName'
+                                value={lastName}
+                                onChange={handleChange('lastName')}
+                                placeholder='Last Name'
+                              />
+                              <Input
+                                type='text'
+                                name='email'
+                                value={email}
+                                onChange={handleChange('email')}
+                                placeholder='Email'
+                              />
+                              <Input
+                                type='text'
+                                name='mobile'
+                                value={mobile}
+                                onChange={handleChange('mobile')}
+                                placeholder='Mobile Number'
+                              />
+                              <br />
+                              <button
+                                type='submit'
+                                onClick={onProfileSubmit}
+                                className='button-red edit-btn'
+                              >
+                                EDIT
+                              </button>
+                            </div>
+                          </form>
                         </>
                       ) : null}
 
@@ -249,7 +415,45 @@ const Profile = (props) => {
                           <hr />
                           <br />
                           <div className='right-container'>
-                            <div className='address-row'>
+                            {wishlistData.map((product) => (
+                              <div key={product.id} className='address-row'>
+                                <div className='col span-1-of-4'>
+                                  <img
+                                    src={product.images}
+                                    style={{ height: '100%', width: '100%' }}
+                                  />
+                                </div>
+                                <div className='col span-2-of-4'>
+                                  <h3>{product.name}</h3>
+                                  <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
+                                  <button
+                                    className='button-red edit-btn margin-right-10px'
+                                    onClick={() =>
+                                      addToCart(
+                                        product.id,
+                                        product.name,
+                                        product.price,
+                                        product.name,
+                                        product.images,
+                                        1
+                                      )
+                                    }
+                                  >
+                                    Move to cart
+                                  </button>
+                                  <button className='button-red edit-btn'>
+                                    Delete
+                                  </button>
+                                </div>
+                                <div
+                                  className='col span-1-of-4 float-right'
+                                  style={{ padding: '0' }}
+                                >
+                                  <p>₹999</p>
+                                </div>
+                              </div>
+                            ))}
+                            {/* <div className='address-row'>
                               <div className='col span-1-of-4'>
                                 <img
                                   src={hoodieimg}
@@ -272,31 +476,7 @@ const Profile = (props) => {
                               >
                                 <p>₹999</p>
                               </div>
-                            </div>
-                            <div className='address-row'>
-                              <div className='col span-1-of-4'>
-                                <img
-                                  src={hoodieimg}
-                                  style={{ height: '100%', width: '100%' }}
-                                />
-                              </div>
-                              <div className='col span-2-of-4'>
-                                <h3>NIKE HOODIE</h3>
-                                <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
-                                <button className='button-red edit-btn margin-right-10px'>
-                                  Move to cart
-                                </button>
-                                <button className='button-red edit-btn'>
-                                  Delete
-                                </button>
-                              </div>
-                              <div
-                                className='col span-1-of-4 float-right'
-                                style={{ padding: '0' }}
-                              >
-                                <p>₹999</p>
-                              </div>
-                            </div>
+                            </div> */}
                           </div>
                         </>
                       ) : null}

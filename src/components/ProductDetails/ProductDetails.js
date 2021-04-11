@@ -21,38 +21,17 @@ import AmountButtons from './AmountButtons';
 import ProductImages from './ProductImages';
 import axios from 'axios';
 import config from '../../config/config';
+import { addToWishlist, isAuthenticated, wishlist } from '../../auth/helper';
 
 const ProductDetails = () => {
   const { proId } = useParams();
   const [loading, setLoading] = useState(true);
+  const [wishListed, setWishListed] = useState(false);
   const [product, setProduct] = useState([]);
-  // const [product, setProduct] = useState([
-  //   {
-  //     id: '3',
-  //     name: 'NEW Allen Solly Sport',
-  //     src: [
-  //       'https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/5f204e75-5886-4c31-9fcd-9772beb959011612421834525-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-1.jpg',
-  //       'https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/537a3697-4b71-455a-b604-b5ef2e33a9091612421834473-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-3.jpg',
-  //       'https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/dd4ed17f-49f7-4738-b07f-5638dc50327d1612421834446-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-4.jpg',
-  //       'https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/77d6a1e6-6289-4f33-b309-34d9396075421612421834421-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-5.jpg',
-  //       'https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/13483804/2021/2/4/f9d63e2e-2181-472b-a677-603c79939fa51612421834498-Allen-Solly-Sport-Men-Rust-Colourblocked-Polo-Collar-T-shirt-2.jpg',
-  //     ],
-  //     description:
-  //       'Men Navy Blue & Rust Orange Colourblocked Polo Collar T-shirt',
-  //     content: `Navy blue, rust orange and White colourblocked T-shirt, has a polo collar, button closure, and short sleeves
-  //       Size & Fit
-  //       The model (height 6') is wearing a size M
-  //       Material & Care
-  //       60% cotton and 40% polyester
-  //       Machine-wash`,
-  //     price: 2300,
-  //     colors: ['red', 'black', 'crimson', 'teal'],
-  //     count: 1,
-  //   },
-  // ]);
 
   useEffect(() => {
     setLoading(true);
+    setWishListed(false);
     async function getProduct() {
       const response = await axios
         .get(`${config.apiEndPoint}/product/${proId}`)
@@ -91,9 +70,24 @@ const ProductDetails = () => {
       }
     }
     getProduct();
-  }, [proId]);
 
-  console.log(product);
+    async function getWishlist() {
+      const response = await wishlist();
+
+      if (response) {
+        if (response.status === 'success') {
+          const filteredList = response.items.filter(function (item) {
+            return item.id == proId;
+          });
+
+          if (filteredList.length > 0) {
+            setWishListed(true);
+          }
+        }
+      }
+    }
+    getWishlist();
+  }, [proId]);
 
   const { addToCart } = useGlobalContext();
   const [index, setIndex] = useState(0);
@@ -116,6 +110,19 @@ const ProductDetails = () => {
       }
       return tempAmount;
     });
+  };
+
+  const onWishlistAdd = () => {
+    setWishListed(false);
+    addToWishlist({ productId: proId })
+      .then((data) => {
+        if (data.status === 'success') {
+          setWishListed(true);
+        } else {
+          console.log(data.message);
+        }
+      })
+      .catch(console.log('error in wishlist'));
   };
 
   if (loading) {
@@ -213,31 +220,49 @@ const ProductDetails = () => {
                       </div>
                       <hr />
                       <div className='row' style={{ display: 'inline-block' }}>
-                        <Link
-                          to='/cart'
-                          className='button-red'
-                          style={{ marginTop: '5vh' }}
-                          onClick={() =>
-                            addToCart(
-                              item.id,
-                              item.name,
-                              item.price,
-                              item.description,
-                              item.src[index],
-                              amount
-                            )
-                          }
-                        >
-                          {<FormattedMessage id='productDetails.addToCart' />}
+                        <Link to='/cart'>
+                          <button
+                            className='button-red'
+                            style={{ marginTop: '5vh' }}
+                            onClick={() =>
+                              addToCart(
+                                item.id,
+                                item.name,
+                                item.price,
+                                item.description,
+                                item.src[index],
+                                amount
+                              )
+                            }
+                          >
+                            {<FormattedMessage id='productDetails.addToCart' />}
+                          </button>
                         </Link>
-                        <button
-                          className='button-red'
-                          style={{ marginTop: '5vh', marginLeft: '2vw' }}
-                        >
-                          {
-                            <FormattedMessage id='productDetails.addToWishList' />
-                          }
-                        </button>
+                        {isAuthenticated() && !wishListed && (
+                          <button
+                            className='button-red'
+                            style={{ marginTop: '5vh', marginLeft: '2vw' }}
+                            onClick={() => onWishlistAdd()}
+                          >
+                            {
+                              <FormattedMessage id='productDetails.addToWishList' />
+                            }
+                          </button>
+                        )}
+                        {isAuthenticated() && wishListed && (
+                          <button
+                            className='button-red'
+                            style={{
+                              marginTop: '5vh',
+                              marginLeft: '2vw',
+                              backgroundColor: '#6b6',
+                            }}
+                          >
+                            {
+                              <FormattedMessage id='productDetails.wishListed' />
+                            }
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>
