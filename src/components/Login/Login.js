@@ -127,7 +127,7 @@ const Login = (props) => {
                   <FormattedMessage id='login.placeholder.password'>
                     {(msg) => (
                       <input
-                        type='text'
+                        type='password'
                         value={password}
                         onChange={handleChange('password')}
                         name='password'

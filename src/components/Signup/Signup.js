@@ -147,7 +147,7 @@ const Signup = (props) => {
                   <FormattedMessage id='signup.placeholder.password'>
                     {(msg) => (
                       <input
-                        type='text'
+                        type='password'
                         name='password'
                         onChange={handleChange('password')}
                         value={password}
