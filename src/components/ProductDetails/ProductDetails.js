@@ -230,7 +230,7 @@ const ProductDetails = () => {
                                 item.name,
                                 item.price,
                                 item.description,
-                                item.src[index],
+                                item.src[0].url,
                                 amount
                               )
                             }
