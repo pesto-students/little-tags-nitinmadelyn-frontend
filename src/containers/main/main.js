@@ -84,7 +84,7 @@ const Main = (props) => {
         amount: 1,
         currency: '€',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg',
       },
       {
@@ -94,7 +94,7 @@ const Main = (props) => {
         amount: 1,
         currency: '€',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg',
       },
       {
@@ -104,7 +104,7 @@ const Main = (props) => {
         amount: 1,
         currency: '€',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4318138/2018/5/4/11525433792765-HERENOW-Men-Black-Printed-Round-Neck-T-shirt-2881525433792598-1.jpg',
       },
       {
@@ -114,7 +114,7 @@ const Main = (props) => {
         amount: 1,
         currency: '€',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10576462/2020/6/17/691eb1a3-3549-4211-a62f-df38a8c37e481592390098023-Roadster-Men-Tshirts-5491592390094405-1.jpg',
       },
     ];
@@ -127,7 +127,7 @@ const Main = (props) => {
         amount: 1,
         currency: '₹',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg',
       },
       {
@@ -137,7 +137,7 @@ const Main = (props) => {
         amount: 1,
         currency: '₹',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg',
       },
       {
@@ -147,7 +147,7 @@ const Main = (props) => {
         amount: 1,
         currency: '₹',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/4318138/2018/5/4/11525433792765-HERENOW-Men-Black-Printed-Round-Neck-T-shirt-2881525433792598-1.jpg',
       },
       {
@@ -157,7 +157,7 @@ const Main = (props) => {
         amount: 1,
         currency: '₹',
         price: '999',
-        image:
+        images:
           'https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10576462/2020/6/17/691eb1a3-3549-4211-a62f-df38a8c37e481592390098023-Roadster-Men-Tshirts-5491592390094405-1.jpg',
       },
     ];

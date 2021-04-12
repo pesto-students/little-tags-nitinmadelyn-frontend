@@ -107,8 +107,6 @@ const Profile = (props) => {
     getAddressData();
   }, []);
 
-  console.log('orderData', orderData, addressData);
-
   const {
     firstName,
     lastName,
