@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logincss from '../Login/login.css';
 import { Link, useHistory, Redirect } from 'react-router-dom';
 import maincss from '../../assets/css/main.css';
@@ -16,7 +16,7 @@ import flatten from 'flat';
 import { useCookies } from 'react-cookie';
 import './shipping.css';
 import { Input } from '../Form/Form';
-import { storeShipping, isAuthenticated } from '../../auth/helper';
+import { storeShipping, isAuthenticated, getShipping } from '../../auth/helper';
 
 const Shipping = (props) => {
   const [values, setValues] = useState({
@@ -44,6 +44,24 @@ const Shipping = (props) => {
     didRedirect,
     error,
   } = values;
+
+  useEffect(() => {
+    const shippingData = getShipping();
+    console.log(shippingData);
+    if (shippingData) {
+      setValues({
+        ...values,
+        firstName: shippingData.firstName,
+        lastName: shippingData.lastName,
+        mobile: shippingData.mobile,
+        address1: shippingData.address1,
+        address2: shippingData.address2,
+        city: shippingData.city,
+        state: shippingData.state,
+        pincode: shippingData.pincode,
+      });
+    }
+  }, []);
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });

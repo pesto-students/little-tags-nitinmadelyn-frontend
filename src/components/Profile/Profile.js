@@ -26,6 +26,8 @@ import {
   userProfile,
   userProfileUpdate,
   wishlist,
+  orders,
+  getAddress,
 } from '../../auth/helper';
 import { useGlobalContext } from '../../context/cart-context';
 
@@ -34,8 +36,9 @@ const Profile = (props) => {
   const history = useHistory();
   const { addToCart } = useGlobalContext();
   const [cookies, setCookie] = useCookies(['Kloths']);
-  const [address, setAddress] = useState([]);
   const [wishlistData, setWishlistData] = useState([]);
+  const [orderData, setOrderData] = useState([]);
+  const [addressData, setAddressData] = useState([]);
 
   const [values, setValues] = useState({
     firstName: '',
@@ -80,7 +83,31 @@ const Profile = (props) => {
       }
     }
     getWishlist();
+
+    async function getOrders() {
+      const response = await orders();
+
+      if (response) {
+        if (response.status === 'success') {
+          setOrderData(response.items);
+        }
+      }
+    }
+    getOrders();
+
+    async function getAddressData() {
+      const response = await getAddress();
+
+      if (response) {
+        if (response.status === 'success') {
+          setAddressData(response.items);
+        }
+      }
+    }
+    getAddressData();
   }, []);
+
+  console.log('orderData', orderData, addressData);
 
   const {
     firstName,
@@ -313,21 +340,26 @@ const Profile = (props) => {
                                 </button>
                               </Link>
                             </div>
-                            <div className='address-row'>
-                              <h4>Home</h4>
-                              <p>
-                                C1002, Aakash Residency, beside YMCA club, sg
-                                highway
-                              </p>
-                              <p>Ahmedabad, Gujarat, 380015</p>
-                            </div>
-                            <div className='address-row'>
+                            {addressData.map((address) => (
+                              <div className='address-row'>
+                                <h4>Home</h4>
+                                <p>
+                                  {address.address1}
+                                  {address.address2 && `, ${address.address2}`}
+                                </p>
+                                <p>
+                                  {address.city}, {address.state},{' '}
+                                  {address.pincode}
+                                </p>
+                              </div>
+                            ))}
+                            {/* <div className='address-row'>
                               <h4>Office</h4>
                               <p>
                                 1002, Earth arise, beside YMCA club, sg highway
                               </p>
                               <p>Ahmedabad, Gujarat, 380015</p>
-                            </div>
+                            </div> */}
                           </div>
                         </>
                       ) : null}
@@ -359,30 +391,33 @@ const Profile = (props) => {
                           <hr />
                           <br />
                           <div className='right-container'>
-                            <div className='address-row'>
-                              <div className='col span-1-of-4'>
-                                <img
-                                  src='https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg'
-                                  style={{ height: '100%', width: '100%' }}
-                                />
+                            {orderData.map((products) => (
+                              <div className='address-row'>
+                                <div className='col span-1-of-4'>
+                                  <img
+                                    src='https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/10016983/2019/6/20/b5caaca7-b5e8-4134-9283-65473a2388031561026348090-Campus-Sutra-Men-Blue-Colourblocked-Round-Neck-T-shirt-99915-1.jpg'
+                                    style={{ height: '100%', width: '100%' }}
+                                  />
+                                </div>
+                                <div className='col span-2-of-4'>
+                                  <h3>{products.product.name}</h3>
+                                  <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
+                                  <p>Ordered On: 20 Feb 2021</p>
+                                  <p>Delivered On: 22 Feb 2021</p>
+                                  <button className='button-red edit-btn margin-right-10px'>
+                                    Buy It Again
+                                  </button>
+                                </div>
+                                <div
+                                  className='col span-1-of-4 float-right'
+                                  style={{ padding: '0' }}
+                                >
+                                  <p>₹ {products.price}</p>
+                                </div>
                               </div>
-                              <div className='col span-2-of-4'>
-                                <h3>NIKE HOODIE</h3>
-                                <p>Size: M &nbsp;&nbsp;&nbsp; Qty: 1</p>
-                                <p>Ordered On: 20 Feb 2021</p>
-                                <p>Delivered On: 22 Feb 2021</p>
-                                <button className='button-red edit-btn margin-right-10px'>
-                                  Buy It Again
-                                </button>
-                              </div>
-                              <div
-                                className='col span-1-of-4 float-right'
-                                style={{ padding: '0' }}
-                              >
-                                <p>₹999</p>
-                              </div>
-                            </div>
-                            <div className='address-row'>
+                            ))}
+
+                            {/* <div className='address-row'>
                               <div className='col span-1-of-4'>
                                 <img
                                   src='https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/12/12/1aab2a18-6774-4f83-b292-fe301755a3351576102551329-1.jpg'
@@ -404,7 +439,7 @@ const Profile = (props) => {
                               >
                                 <p>₹999</p>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
                         </>
                       ) : null}

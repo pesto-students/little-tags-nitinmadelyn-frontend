@@ -84,7 +84,8 @@ const Payment = (props) => {
       storeCart({
         productId: cart[0].id,
         price: cart[0].price,
-        attributes: { quantity: cart[0].amount },
+        name: cart[0].name,
+        quantity: cart[0].amount,
       });
     }
     storeCartData();
@@ -112,7 +113,8 @@ const Payment = (props) => {
               makeOrder({
                 productId: cart[0].id,
                 price: cart[0].price,
-                attributes: { quantity: cart[0].amount },
+                addressId: firstAddress.id,
+                attributes: JSON.stringify({ quantity: cart[0].amount }),
               }).then((orderDetails) => {
                 if (orderDetails.status === 'success') {
                   updateOrder(
@@ -126,10 +128,20 @@ const Payment = (props) => {
                         ...values,
                         didRedirect: true,
                       });
+                    } else {
+                      setValues({
+                        ...values,
+                        error: data.message,
+                        loading: false,
+                      });
                     }
                   });
+                } else {
+                  setValues({ ...values, error: data.message, loading: false });
                 }
               });
+            } else {
+              setValues({ ...values, error: data.message, loading: false });
             }
           });
         } else {
@@ -166,7 +178,6 @@ const Payment = (props) => {
       </div>
     );
   };
-  console.log('values', values);
   return (
     <LanguageContext.Consumer>
       {(language) => (
@@ -216,7 +227,7 @@ const Payment = (props) => {
                     <div className='col span-2-of-4'>
                       {cart.map((item) => (
                         <>
-                          {item.amount} * {item.name} <br />
+                          {item.amount} x {item.name} <br />
                         </>
                       ))}
                     </div>
@@ -233,6 +244,9 @@ const Payment = (props) => {
                   </div>
                 </div>
                 <div className='row' className='bottom-btn1'>
+                  {loadingMessage()}
+                  {errorMessage()}
+                  <br />
                   <Link to='cart' className='float-left back-link'>
                     {' '}
                     &lt; Return to cart
@@ -244,6 +258,7 @@ const Payment = (props) => {
                 <br />
                 <br />
               </div>
+              {performRedirect()}
             </section>
           </main>
         </IntlProvider>

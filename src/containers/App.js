@@ -56,6 +56,9 @@ const App = (props) => {
           >
             <SearchResult language={language} />
           </Route>
+          <Route path='/search/:categoryId' component={(Header, SearchResult)}>
+            <SearchResult language={language} />
+          </Route>
           {/* <Route path="/profile/:tabName?" component={(Profile)}>
           <Profile />
           </Route> */}

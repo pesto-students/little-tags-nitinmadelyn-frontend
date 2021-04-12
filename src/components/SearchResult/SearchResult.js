@@ -43,7 +43,9 @@ const SearchResult = (props) => {
             },
             {
               key: 'subcategoryId',
-              value: `${searchKeyword.subCategoryId}`,
+              value: `${
+                searchKeyword.subCategoryId ? searchKeyword.subCategoryId : ''
+              }`,
             },
           ],
           language: 'en',
@@ -61,7 +63,6 @@ const SearchResult = (props) => {
   const loadingMessage = () => {
     return (
       <>
-        <br />
         <div
           className='alert alert-info test-center'
           style={{ display: loading ? '' : 'none' }}
@@ -75,7 +76,6 @@ const SearchResult = (props) => {
   const noProduct = () => {
     return (
       <>
-        <br />
         <div
           className='alert alert-danger test-center'
           style={{ display: products.length == 0 && !loading ? '' : 'none' }}
@@ -216,12 +216,15 @@ const SearchResult = (props) => {
                 <div className='col span-3-of-4'>
                   <div className='filter-bg'>
                     <div className='row result-title'>
-                      <h3>
-                        <FormattedMessage
-                          id='category.result'
-                          values={{ name: searchKeyword.text }}
-                        />
-                      </h3>
+                      {searchKeyword.text && (
+                        <h3>
+                          <FormattedMessage
+                            id='category.result'
+                            values={{ name: searchKeyword.text }}
+                          />
+                        </h3>
+                      )}
+                      {!searchKeyword.text && <h3>Results</h3>}
                       <hr />
                     </div>
 

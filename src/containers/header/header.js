@@ -149,24 +149,30 @@ const Header = (props) => {
                   </span>
                 </div>
               </div>
-              <div className='main-menu part-1'>
-                <img src={menIcon} />{' '}
-                <span>
-                  <FormattedMessage id='home.mens' />
-                </span>
-              </div>
-              <div className='main-menu part-2'>
-                <img src={womenIcon} />
-                <span>
-                  <FormattedMessage id='home.women' />
-                </span>
-              </div>
-              <div className='main-menu part-3'>
-                <img src={kidIcon} />
-                <span>
-                  <FormattedMessage id='home.kids' />
-                </span>
-              </div>
+              <Link to={`/search/60f0c15d-e1c8-428c-96cb-0a47ded6d8ca`}>
+                <div className='main-menu part-1'>
+                  <img src={menIcon} />{' '}
+                  <span style={{ color: 'white' }}>
+                    <FormattedMessage id='home.mens' />
+                  </span>
+                </div>
+              </Link>
+              <Link to={`/search/7758f0d3-8713-4943-bf2a-77445d7f3e32`}>
+                <div className='main-menu part-2'>
+                  <img src={womenIcon} />
+                  <span style={{ color: 'white' }}>
+                    <FormattedMessage id='home.women' />
+                  </span>
+                </div>
+              </Link>
+              <Link to={`/search/1ea83d29-7617-4e62-9e77-b0e7d2654953`}>
+                <div className='main-menu part-3'>
+                  <img src={kidIcon} />
+                  <span style={{ color: 'white' }}>
+                    <FormattedMessage id='home.kids' />
+                  </span>
+                </div>
+              </Link>
               <div></div>
             </nav>
             <div className='row'>
